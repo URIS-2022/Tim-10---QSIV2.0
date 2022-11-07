@@ -150,7 +150,8 @@ namespace ARMeilleure.Instructions
 
             if (rd == RegisterAlias.Aarch32Pc && setFlags)
             {
-                if (setFlags == true) 
+                bool a = false;
+                if (setFlags || !a) 
                 {
                     // TODO: Load SPSR etc.
 
