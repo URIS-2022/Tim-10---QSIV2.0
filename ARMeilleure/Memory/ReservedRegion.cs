@@ -49,8 +49,8 @@ namespace ARMeilleure.Memory
                 }
             }
         }
-
-        public void Dispose()
+        
+        public void Garbage()
         {
             Block.Dispose();
         }
