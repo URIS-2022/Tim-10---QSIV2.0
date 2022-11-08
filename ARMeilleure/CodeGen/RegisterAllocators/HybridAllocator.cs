@@ -397,8 +397,8 @@ namespace ARMeilleure.CodeGen.RegisterAllocators
 
                     sequence++;
 
-                    intUsedRegisters |= intLocalAsg | intLocalUse;
-                    vecUsedRegisters |= vecLocalAsg | vecLocalUse;
+                    intUsedRegisters =  intLocalUse;
+                    vecUsedRegisters =  vecLocalUse;
                 }
             }
 
