@@ -138,7 +138,7 @@ namespace ARMeilleure.CodeGen.RegisterAllocators
                     {
                         context.IntUsedRegisters |= 1 << current.Register.Index;
                     }
-                    else /* if (interval.Register.Type == RegisterType.Vector) */
+                    else 
                     {
                         context.VecUsedRegisters |= 1 << current.Register.Index;
                     }
