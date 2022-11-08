@@ -829,7 +829,7 @@ namespace ARMeilleure.CodeGen.X86
             }
         }
 
-        private static void HandleTailcallSystemVAbi(IntrusiveList<Operation> nodes, Operation node)
+        private static void HandleTailcallSystemVAbi(IntrusiveList<Operation> nodes, StackAllocator stackAlloc, Operation node)
         {
             List<Operand> sources = new List<Operand>
             {
