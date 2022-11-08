@@ -6,8 +6,8 @@ namespace ARMeilleure.CodeGen.Optimizations
 {
     static class ConstantFolding
     {
-        static Operation operation;
-        public static OperandType type = operation.Destination.Type;
+        public static Operation operation = new Operation();
+        public static readonly OperandType type = operation.Destination.Type;
 
         public static void FunctionAdd(Operation operation)
         {
@@ -248,90 +248,29 @@ namespace ARMeilleure.CodeGen.Optimizations
             {
                 return;
             }
-           // OperandType type = operation.Destination.Type;
-            if (operation.Instruction == Instruction.Add)
+            switch (operation.Instruction)
             {
-                FunctionAdd(operation);
-            }
-            else if (operation.Instruction == Instruction.BitwiseAnd)
-            {
-                FunctionBitwiseAnd(operation);
-            }
-            else if (operation.Instruction == Instruction.BitwiseExclusiveOr)
-            {
-                FuncitonBitwiseExclusiveOr(operation);
-            }
-            else if (operation.Instruction == Instruction.BitwiseNot)
-            {
-                FunctionBitwiseNot(operation);
-            }
-            else if (operation.Instruction == Instruction.BitwiseOr)
-            {
-                FunctionBitwiseOr(operation);
-            }
-            else if (operation.Instruction == Instruction.ConvertI64ToI32)
-            {
-                FunctionConvertI64ToI32(operation);
-            }
-            else if (operation.Instruction == Instruction.Copy)
-            {
-                FunctionCopy(operation);
-            }
-            else if (operation.Instruction == Instruction.Divide)
-            {
-                FunctionDivide(operation);
-            }
-            else if (operation.Instruction == Instruction.DivideUI)
-            {
-                FunctionDivideUI(operation);
-            }
-            else if (operation.Instruction == Instruction.Multiply)
-            {
-                FunctionMultiply(operation);
-            }
-            else if (operation.Instruction == Instruction.Negate)
-            {
-                FunctionNegate(operation);
-            }
-            else if (operation.Instruction == Instruction.ShiftLeft)
-            {
-                FunctionShiftLeft(operation);
-            }
-            else if (operation.Instruction == Instruction.ShiftRightSI)
-            {
-                FunctionShiftRightSI(operation);
-            }
-            else if (operation.Instruction == Instruction.ShiftRightUI)
-            {
-                FunctionShiftRightUI(operation);
-            }
-            else if (operation.Instruction == Instruction.SignExtend16)
-            {
-                FunctionSignExtend16(operation);
-            }
-            else if (operation.Instruction == Instruction.SignExtend32)
-            {
-                FunctionSignExtend32(operation);
-            }
-            else if (operation.Instruction == Instruction.SignExtend8)
-            {
-                FunctionSignExtend8(operation);
-            }
-            else if (operation.Instruction == Instruction.ZeroExtend16)
-            {
-                FunctionZeroExtend16(operation);
-            }
-            else if (operation.Instruction == Instruction.ZeroExtend32)
-            {
-                FunctionZeroExtend32(operation);
-            }
-            else if (operation.Instruction == Instruction.ZeroExtend8)
-            {
-                FunctionZeroExtend8(operation);
-            }
-            else if (operation.Instruction == Instruction.Subtract)
-            {
-                FunctionSubtract(operation);
+                case Instruction.Add: FunctionAdd(operation); break;
+                case Instruction.BitwiseAnd: FunctionBitwiseAnd(operation); break;
+                case Instruction.BitwiseExclusiveOr: FuncitonBitwiseExclusiveOr(operation); break;
+                case Instruction.BitwiseNot: FunctionBitwiseNot(operation); break;
+                case Instruction.BitwiseOr: FunctionBitwiseOr(operation); break;
+                case Instruction.ConvertI64ToI32: FunctionConvertI64ToI32(operation); break;
+                case Instruction.Copy: FunctionCopy(operation); break;
+                case Instruction.Divide: FunctionDivide(operation); break;
+                case Instruction.DivideUI: FunctionDivideUI(operation); break;
+                case Instruction.Multiply: FunctionMultiply(operation); break;
+                case Instruction.Negate: FunctionNegate(operation); break;
+                case Instruction.ShiftLeft: FunctionShiftLeft(operation); break;
+                case Instruction.ShiftRightSI: FunctionShiftRightSI(operation); break;
+                case Instruction.ShiftRightUI: FunctionShiftRightUI(operation); break;
+                case Instruction.SignExtend16: FunctionSignExtend16(operation); break;
+                case Instruction.SignExtend32: FunctionSignExtend32(operation); break;
+                case Instruction.SignExtend8: FunctionSignExtend8(operation); break;
+                case Instruction.ZeroExtend16: FunctionZeroExtend16(operation); break;
+                case Instruction.ZeroExtend32: FunctionZeroExtend32(operation); break;
+                case Instruction.ZeroExtend8: FunctionZeroExtend8(operation); break;
+                case Instruction.Subtract: FunctionSubtract(operation); break;
             }
         }
 
