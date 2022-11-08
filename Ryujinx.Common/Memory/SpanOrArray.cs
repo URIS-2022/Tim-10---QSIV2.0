@@ -9,7 +9,13 @@ namespace Ryujinx.Common.Memory
     /// <typeparam name="T">Element Type</typeparam>
     public ref struct SpanOrArray<T> where T : unmanaged
     {
-        public T[] Array;
+        private T[] Array;
+
+        public Array t
+        {
+            get { return T; }
+            set { T = value; }
+        }
         public readonly ReadOnlySpan<T> Span;
 
         /// <summary>
