@@ -37,7 +37,7 @@ namespace ARMeilleure.Memory
             if (desiredSize > _currentSize)
             {
                 // Lock, and then check again. We only want to commit once.
-                lock (this)
+                lock (desiredSize)
                 {
                     if (desiredSize >= _currentSize)
                     {
