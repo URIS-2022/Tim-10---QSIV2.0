@@ -216,7 +216,9 @@ namespace ARMeilleure.Common
 
             public void Reset() { }
 
-            public void Dispose() { }
+            public void Dispose() { 
+                //Will probably dispose something
+            }
         }
     }
 }
