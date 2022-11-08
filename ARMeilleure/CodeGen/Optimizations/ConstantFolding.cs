@@ -6,7 +6,7 @@ namespace ARMeilleure.CodeGen.Optimizations
 {
     static class ConstantFolding
     {
-        public static Operation operation = new Operation();
+        public static readonly Operation operation = new Operation();
         public static readonly OperandType type = operation.Destination.Type;
 
         public static void FunctionAdd(Operation operation)
@@ -16,7 +16,7 @@ namespace ARMeilleure.CodeGen.Optimizations
             {
                 return;
             }
-            else if (type == OperandType.I32)
+            if (type == OperandType.I32)
             {
                 EvaluateBinaryI32(operation, (x, y) => x + y);
             }
