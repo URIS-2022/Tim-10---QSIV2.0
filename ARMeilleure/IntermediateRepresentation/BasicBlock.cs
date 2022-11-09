@@ -164,7 +164,7 @@ namespace ARMeilleure.IntermediateRepresentation
         public override int GetHashCode()
         
         {
-            return Id.GetHashCode() ^ Values.GetHashCode();
+            return base.GetHashCode();
         }
     
     }
