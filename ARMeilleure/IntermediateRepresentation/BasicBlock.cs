@@ -164,7 +164,7 @@ namespace ARMeilleure.IntermediateRepresentation
         public override int GetHashCode()
         
         {
-            return base.GetHashCode();
+            return string.Format("{0}_{1}_{2}", prop1, prop2, prop3).GetHashCode();
         }
     
     }
