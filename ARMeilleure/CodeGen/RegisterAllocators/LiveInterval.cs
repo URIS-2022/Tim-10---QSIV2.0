@@ -9,9 +9,10 @@ namespace ARMeilleure.CodeGen.RegisterAllocators
     {
         public const int NotFound = -1;
 
+        [System.SerializableAttribute]
         private struct Data
         {
-            internal int End;
+            public int End;
             public int SpillOffset;
 
             public LiveRange FirstRange;
