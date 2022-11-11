@@ -1002,7 +1002,7 @@ namespace ARMeilleure.CodeGen.X86
             }
             else
             {
-                // Pass on stack.
+                // TODO: Pass on stack.
                 return node;
             }
         }
