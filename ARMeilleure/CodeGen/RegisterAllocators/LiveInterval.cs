@@ -11,7 +11,7 @@ namespace ARMeilleure.CodeGen.RegisterAllocators
 
         private struct Data
         {
-            public int End;
+            internal int End;
             public int SpillOffset;
 
             public LiveRange FirstRange;
