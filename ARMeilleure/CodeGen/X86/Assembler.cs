@@ -677,6 +677,7 @@ namespace ARMeilleure.CodeGen.X86
         {
             if (src2.Kind == OperandKind.Constant)
             {
+                
                 WriteInstruction(src1, dest, src2, inst);
             }
             else
