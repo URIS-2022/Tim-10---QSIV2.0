@@ -9,7 +9,6 @@ namespace ARMeilleure.CodeGen.RegisterAllocators
     {
         public const int NotFound = -1;
 
-        [System.SerializableAttribute]
         private struct Data
         {
             public int End;
@@ -29,7 +28,7 @@ namespace ARMeilleure.CodeGen.RegisterAllocators
 
             public bool IsFixed;
         }
-
+        
         private readonly Data* _data;
 
         private ref int End => ref _data->End;
