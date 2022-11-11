@@ -250,7 +250,7 @@ namespace Ryujinx.Common.Collections
         /// This should only be called if the max increases - not for rebalancing or removals.
         /// </summary>
         /// <param name="node">The node to start propagating from</param>
-        private void PropagateIncrease(IntervalTreeNode<K, V> node)
+        private static void PropagateIncrease(IntervalTreeNode<K, V> node)
         {
             K max = node.Max;
             IntervalTreeNode<K, V> ptr = node;
