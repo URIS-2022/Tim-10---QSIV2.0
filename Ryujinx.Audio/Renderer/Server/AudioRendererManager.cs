@@ -367,11 +367,8 @@ namespace Ryujinx.Audio.Renderer.Server
 
         public void Dispose()
         {
-            if (Interlocked.CompareExchange(ref _disposeState, 1, 0) == 0)
-            {
-                Dispose(true);
-                GC.SuppressFinalize(this);
-            }
+            Dispose(true);
+            GC.SuppressFinalize(this);
         }
 
         protected virtual void Dispose(bool disposing)
