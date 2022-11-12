@@ -8,7 +8,7 @@ namespace Ryujinx.Graphics.OpenGL
     unsafe class BackgroundContextWorker : IDisposable
     {
         [ThreadStatic]
-        public static bool InBackground;
+        public bool InBackground;
         private Thread _thread;
         private bool _running;
 

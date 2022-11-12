@@ -46,7 +46,7 @@ namespace Ryujinx.Memory.Tracking
                 // It is assumed that the provided handles do not overlap, in order, are on page boundaries,
                 // and don't extend past the requested range.
 
-                foreach (RegionHandle handle in handles)
+                foreach (var handle in handles)
                 {
                     int startIndex = (int)((handle.Address - address) / granularity);
 
