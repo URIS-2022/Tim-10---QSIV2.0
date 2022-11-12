@@ -17,7 +17,7 @@ namespace Ryujinx.Graphics.Shader
         public static int RequiredSize;
 
         public static int FragmentAlphaTestOffset;
-        public static readonly int FragmentIsBgraOffset;
+        public static int FragmentIsBgraOffset;
         public static int ViewportInverseOffset;
         public static int FragmentRenderScaleCountOffset;
         public static int GraphicsRenderScaleOffset;
