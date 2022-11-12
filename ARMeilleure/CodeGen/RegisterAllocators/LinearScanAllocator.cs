@@ -292,7 +292,7 @@ namespace ARMeilleure.CodeGen.RegisterAllocators
             {
                 context.IntUsedRegisters |= 1 << selectedReg;
             }
-            else /* if (regType == RegisterType.Vector) */
+            else
             {
                 context.VecUsedRegisters |= 1 << selectedReg;
             }
