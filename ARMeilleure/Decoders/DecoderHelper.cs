@@ -4,11 +4,8 @@ namespace ARMeilleure.Decoders
 {
     static class DecoderHelper
     {
-        static DecoderHelper()
-        {
-            Imm8ToFP32Table = BuildImm8ToFP32Table();
-            Imm8ToFP64Table = BuildImm8ToFP64Table();
-        }
+        public static readonly Imm8ToFP32Table = BuildImm8ToFP32Table();
+        public static readonly Imm8ToFP64Table = BuildImm8ToFP64Table();
 
         public static readonly uint[]  Imm8ToFP32Table;
         public static readonly ulong[] Imm8ToFP64Table;
