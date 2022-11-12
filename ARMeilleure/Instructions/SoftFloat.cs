@@ -412,17 +412,10 @@ namespace ARMeilleure.Instructions
 
             switch (context.Fpcr.GetRoundingMode())
             {
-                default:
-                case FPRoundingMode.ToNearest:
-                    roundUp       = (error > 0.5d || (error == 0.5d && (intMant & 1u) == 1u));
-                    overflowToInf = true;
-                    break;
-
                 case FPRoundingMode.TowardsPlusInfinity:
                     roundUp       = (error != 0d && !sign);
                     overflowToInf = !sign;
                     break;
-
                 case FPRoundingMode.TowardsMinusInfinity:
                     roundUp       = (error != 0d && sign);
                     overflowToInf = sign;
@@ -431,6 +424,10 @@ namespace ARMeilleure.Instructions
                 case FPRoundingMode.TowardsZero:
                     roundUp       = false;
                     overflowToInf = false;
+                    break;
+                default:
+                    roundUp = (error > 0.5d || (error == 0.5d && (intMant & 1u) == 1u));
+                    overflowToInf = true;
                     break;
             }
 
