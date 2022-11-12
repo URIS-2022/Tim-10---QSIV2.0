@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace ARMeilleure.Signal
 {
-    unsafe static class WindowsSignalHandlerRegistration
+    unsafe class WindowsSignalHandlerRegistration
     {
         [DllImport("kernel32.dll")]
         private static extern IntPtr AddVectoredExceptionHandler(uint first, IntPtr handler);
