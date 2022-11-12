@@ -3,7 +3,7 @@ using System;
 namespace Ryujinx.HLE.HOS.Services.Hid
 {
     [Flags]
-    public enum ControllerType : int
+    public enum ControllerTypes : int
     {
         None,
         ProController  = 1 << 0,
