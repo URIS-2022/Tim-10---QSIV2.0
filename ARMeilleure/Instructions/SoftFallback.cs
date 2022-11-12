@@ -96,8 +96,12 @@ namespace ARMeilleure.Instructions
         {
             if (float.IsNaN(value)) return 0;
 
-            return value >= int.MaxValue ? int.MaxValue :
-                   value <= int.MinValue ? int.MinValue : (int)value;
+            if(value >= int.MaxValue)
+			{
+                return int.MaxValue;
+            }
+
+            return value <= int.MinValue ? int.MinValue : (int)value;
         }
 
         public static long SatF32ToS64(float value)
