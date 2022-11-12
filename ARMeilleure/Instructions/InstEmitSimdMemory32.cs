@@ -53,9 +53,10 @@ namespace ARMeilleure.Instructions
 
         public static void EmitVStoreOrLoadN(ArmEmitterContext context, int count, bool load)
         {
-            var op = context.CurrOp as OpCode32SimdMemSingle;
-            if (op != null)
+            if (context.CurrOp is OpCode32SimdMemSingle)
             {
+                OpCode32SimdMemSingle op = (OpCode32SimdMemSingle)context.CurrOp;
+
                 int eBytes = 1 << op.Size;
 
                 Operand n = context.Copy(GetIntA32(context, op.Rn));
