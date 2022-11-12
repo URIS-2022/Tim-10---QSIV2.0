@@ -280,7 +280,7 @@ namespace ARMeilleure.Instructions
 
         public static void Srshr_S(ArmEmitterContext context)
         {
-            EmitScalarShrImmOpSx(context, ShrImmFlags.Round);
+            EmitScalarShrImmOpSx(context, ShrImm.Round);
         }
 
         public static void Srshr_V(ArmEmitterContext context)
@@ -319,13 +319,13 @@ namespace ARMeilleure.Instructions
             }
             else
             {
-                EmitVectorShrImmOpSx(context, ShrImmFlags.Round);
+                EmitVectorShrImmOpSx(context, ShrImm.Round);
             }
         }
 
         public static void Srsra_S(ArmEmitterContext context)
         {
-            EmitScalarShrImmOpSx(context, ShrImmFlags.Round | ShrImmFlags.Accumulate);
+            EmitScalarShrImmOpSx(context, ShrImm.Round | ShrImm.Accumulate);
         }
 
         public static void Srsra_V(ArmEmitterContext context)
@@ -366,7 +366,7 @@ namespace ARMeilleure.Instructions
             }
             else
             {
-                EmitVectorShrImmOpSx(context, ShrImmFlags.Round | ShrImmFlags.Accumulate);
+                EmitVectorShrImmOpSx(context, ShrImm.Round | ShrImm.Accumulate);
             }
         }
 
@@ -416,7 +416,7 @@ namespace ARMeilleure.Instructions
 
         public static void Sshr_S(ArmEmitterContext context)
         {
-            EmitShrImmOp(context, ShrImmFlags.ScalarSx);
+            EmitShrImmOp(context, ShrImm.ScalarSx);
         }
 
         public static void Sshr_V(ArmEmitterContext context)
@@ -472,13 +472,13 @@ namespace ARMeilleure.Instructions
             }
             else
             {
-                EmitShrImmOp(context, ShrImmFlags.VectorSx);
+                EmitShrImmOp(context, ShrImm.VectorSx);
             }
         }
 
         public static void Ssra_S(ArmEmitterContext context)
         {
-            EmitScalarShrImmOpSx(context, ShrImmFlags.Accumulate);
+            EmitScalarShrImmOpSx(context, ShrImm.Accumulate);
         }
 
         public static void Ssra_V(ArmEmitterContext context)
@@ -509,7 +509,7 @@ namespace ARMeilleure.Instructions
             }
             else
             {
-                EmitVectorShrImmOpSx(context, ShrImmFlags.Accumulate);
+                EmitVectorShrImmOpSx(context, ShrImm.Accumulate);
             }
         }
 
@@ -550,7 +550,7 @@ namespace ARMeilleure.Instructions
 
         public static void Urshr_S(ArmEmitterContext context)
         {
-            EmitScalarShrImmOpZx(context, ShrImmFlags.Round);
+            EmitScalarShrImmOpZx(context, ShrImm.Round);
         }
 
         public static void Urshr_V(ArmEmitterContext context)
@@ -587,13 +587,13 @@ namespace ARMeilleure.Instructions
             }
             else
             {
-                EmitVectorShrImmOpZx(context, ShrImmFlags.Round);
+                EmitVectorShrImmOpZx(context, ShrImm.Round);
             }
         }
 
         public static void Ursra_S(ArmEmitterContext context)
         {
-            EmitScalarShrImmOpZx(context, ShrImmFlags.Round | ShrImmFlags.Accumulate);
+            EmitScalarShrImmOpZx(context, ShrImm.Round | ShrImm.Accumulate);
         }
 
         public static void Ursra_V(ArmEmitterContext context)
@@ -632,7 +632,7 @@ namespace ARMeilleure.Instructions
             }
             else
             {
-                EmitVectorShrImmOpZx(context, ShrImmFlags.Round | ShrImmFlags.Accumulate);
+                EmitVectorShrImmOpZx(context, ShrImm.Round | ShrImm.Accumulate);
             }
         }
 
@@ -682,7 +682,7 @@ namespace ARMeilleure.Instructions
 
         public static void Ushr_S(ArmEmitterContext context)
         {
-            EmitShrImmOp(context, ShrImmFlags.ScalarZx);
+            EmitShrImmOp(context, ShrImm.ScalarZx);
         }
 
         public static void Ushr_V(ArmEmitterContext context)
@@ -708,13 +708,13 @@ namespace ARMeilleure.Instructions
             }
             else
             {
-                EmitShrImmOp(context, ShrImmFlags.VectorZx);
+                EmitShrImmOp(context, ShrImm.VectorZx);
             }
         }
 
         public static void Usra_S(ArmEmitterContext context)
         {
-            EmitScalarShrImmOpZx(context, ShrImmFlags.Accumulate);
+            EmitScalarShrImmOpZx(context, ShrImm.Accumulate);
         }
 
         public static void Usra_V(ArmEmitterContext context)
@@ -745,12 +745,12 @@ namespace ARMeilleure.Instructions
             }
             else
             {
-                EmitVectorShrImmOpZx(context, ShrImmFlags.Accumulate);
+                EmitVectorShrImmOpZx(context, ShrImm.Accumulate);
             }
         }
 
         [Flags]
-        private enum ShrImmFlags
+        private enum ShrImm
         {
             Scalar = 1 << 0,
             Signed = 1 << 1,
@@ -765,36 +765,36 @@ namespace ARMeilleure.Instructions
             VectorZx = 0
         }
 
-        private static void EmitScalarShrImmOpSx(ArmEmitterContext context, ShrImmFlags flags)
+        private static void EmitScalarShrImmOpSx(ArmEmitterContext context, ShrImm flags)
         {
-            EmitShrImmOp(context, ShrImmFlags.ScalarSx | flags);
+            EmitShrImmOp(context, ShrImm.ScalarSx | flags);
         }
 
-        private static void EmitScalarShrImmOpZx(ArmEmitterContext context, ShrImmFlags flags)
+        private static void EmitScalarShrImmOpZx(ArmEmitterContext context, ShrImm flags)
         {
-            EmitShrImmOp(context, ShrImmFlags.ScalarZx | flags);
+            EmitShrImmOp(context, ShrImm.ScalarZx | flags);
         }
 
-        private static void EmitVectorShrImmOpSx(ArmEmitterContext context, ShrImmFlags flags)
+        private static void EmitVectorShrImmOpSx(ArmEmitterContext context, ShrImm flags)
         {
-            EmitShrImmOp(context, ShrImmFlags.VectorSx | flags);
+            EmitShrImmOp(context, ShrImm.VectorSx | flags);
         }
 
-        private static void EmitVectorShrImmOpZx(ArmEmitterContext context, ShrImmFlags flags)
+        private static void EmitVectorShrImmOpZx(ArmEmitterContext context, ShrImm flags)
         {
-            EmitShrImmOp(context, ShrImmFlags.VectorZx | flags);
+            EmitShrImmOp(context, ShrImm.VectorZx | flags);
         }
 
-        private static void EmitShrImmOp(ArmEmitterContext context, ShrImmFlags flags)
+        private static void EmitShrImmOp(ArmEmitterContext context, ShrImm flags)
         {
             OpCodeSimdShImm op = (OpCodeSimdShImm)context.CurrOp;
 
             Operand res = context.VectorZero();
 
-            bool scalar     = (flags & ShrImmFlags.Scalar)     != 0;
-            bool signed     = (flags & ShrImmFlags.Signed)     != 0;
-            bool round      = (flags & ShrImmFlags.Round)      != 0;
-            bool accumulate = (flags & ShrImmFlags.Accumulate) != 0;
+            bool scalar     = (flags & ShrImm.Scalar)     != 0;
+            bool signed     = (flags & ShrImm.Signed)     != 0;
+            bool round      = (flags & ShrImm.Round)      != 0;
+            bool accumulate = (flags & ShrImm.Accumulate) != 0;
 
             int shift = GetImmShr(op);
 
