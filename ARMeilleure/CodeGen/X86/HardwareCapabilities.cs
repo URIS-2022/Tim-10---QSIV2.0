@@ -5,18 +5,17 @@ namespace ARMeilleure.CodeGen.X86
 {
     static class HardwareCapabilities
     {
+        private static (int maxNum, _, _, _) = X86Base.CpuId(0x00000000, 0x00000000);
+        private (_, _, int ecx1, int edx1) = X86Base.CpuId(0x00000001, 0x00000000);
+        private FeatureInfo1Edx = (FeatureFlags1Edx) edx1;
+        private FeatureInfo1Ecx = (FeatureFlags1Ecx) ecx1;
+
         static HardwareCapabilities()
         {
             if (!X86Base.IsSupported)
             {
                 return;
             }
-
-            (int maxNum, _, _, _) = X86Base.CpuId(0x00000000, 0x00000000);
-
-            (_, _, int ecx1, int edx1) = X86Base.CpuId(0x00000001, 0x00000000);
-            FeatureInfo1Edx = (FeatureFlags1Edx)edx1;
-            FeatureInfo1Ecx = (FeatureFlags1Ecx)ecx1;
 
             if (maxNum >= 7)
             {
