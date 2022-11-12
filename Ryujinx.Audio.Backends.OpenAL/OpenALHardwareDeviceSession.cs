@@ -203,7 +203,7 @@ namespace Ryujinx.Audio.Backends.OpenAL
             }
         }
 
-        public override void Dispose()
+        public void Dispose()
         {
             Dispose(true);
             GC.SuppressFinalize(this);
