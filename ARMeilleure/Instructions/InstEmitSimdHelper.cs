@@ -1268,7 +1268,7 @@ namespace ARMeilleure.Instructions
 
             if ((op.Size & 1) == 0)
             {
-                const int sm0 = 2 << 6 | 2 << 4 | 2 << 2 | 0 << 0;
+                const int sm0 = 2 << 6 | 2 << 4 | 2 << 2;
                 const int sm1 = 2 << 6 | 2 << 4 | 2 << 2 | 1 << 0;
 
                 Operand zeroN = context.VectorZeroUpper64(n);
