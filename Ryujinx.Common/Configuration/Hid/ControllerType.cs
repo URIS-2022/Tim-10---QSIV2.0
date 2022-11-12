@@ -4,7 +4,7 @@ namespace Ryujinx.Common.Configuration.Hid
 {
     [Flags]
     // This enum was duplicated from Ryujinx.HLE.HOS.Services.Hid.PlayerIndex and should be kept identical
-    public enum ControllerType : int
+    public enum ControllerTypes
     {
         None,
         ProController  = 1 << 0,
