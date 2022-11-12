@@ -52,7 +52,7 @@ namespace Ryujinx.Audio.Backends.OpenAL
             }
         }
 
-        public IHardwareDeviceSession OpenDeviceSession(Direction direction, IVirtualMemoryManager memoryManager, SampleFormat sampleFormat, uint sampleRate, uint channelCount, float volume)
+        public IHardwareDeviceSession OpenDeviceSession(Direction direction, IVirtualMemoryManager memoryManager, SampleFormat sampleFormat, uint sampleRate, uint channelCount, float volume = 1f)
         {
             if (channelCount == 0)
             {
