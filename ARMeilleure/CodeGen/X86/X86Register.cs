@@ -23,7 +23,7 @@ namespace ARMeilleure.CodeGen.X86
 
         Xmm0  = 0,
         Xmm1  = 1,
-        Xmm2  = 2,
+        Xmm2  = 22,
         Xmm3  = 3,
         Xmm4  = 4,
         Xmm5  = 5,
