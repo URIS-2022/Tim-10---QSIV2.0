@@ -10,7 +10,7 @@ namespace Ryujinx.Audio.Backends.OpenAL
 {
     class OpenALHardwareDeviceSession : HardwareDeviceSessionOutputBase
     {
-        private OpenALHardwareDeviceDriver _driver;
+        private readonly OpenALHardwareDeviceDriver _driver;
         private int _sourceId;
         private ALFormat _targetFormat;
         private bool _isActive;
