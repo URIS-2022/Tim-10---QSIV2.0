@@ -18,7 +18,7 @@ namespace ARMeilleure.IntermediateRepresentation
             public Operand* Sources;
         }
 
-        private Data* _data;
+        private readonly Data* _data;
 
         public Instruction Instruction
         {
