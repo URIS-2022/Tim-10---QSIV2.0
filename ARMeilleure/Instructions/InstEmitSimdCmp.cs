@@ -518,7 +518,7 @@ namespace ARMeilleure.Instructions
         {
             OpCodeSimdReg op = (OpCodeSimdReg)context.CurrOp;
 
-            bool cmpWithZero = !(op is OpCodeSimdFcond) ? op.Bit3 : false;
+            bool cmpWithZero = op is OpCodeSimdFcond ? false : op.Bit3;
 
             if (Optimizations.FastFP && (signalNaNs ? Optimizations.UseAvx : Optimizations.UseSse2))
             {
@@ -550,7 +550,7 @@ namespace ARMeilleure.Instructions
                     SetFlag(context, PState.ZFlag, zf);
                     SetFlag(context, PState.NFlag, nf);
                 }
-                else /* if (op.Size == 1) */
+                else 
                 {
                     Operand ordMask = context.AddIntrinsic(Intrinsic.X86Cmpsd, n, m, Const((int)cmpOrdered));
 
