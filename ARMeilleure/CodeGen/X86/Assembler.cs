@@ -758,7 +758,7 @@ namespace ARMeilleure.CodeGen.X86
                 {
                     ulong imm = source.Value;
 
-                    if (inst == X86Instruction.Mov8)
+                    if (inst == X86Instruction.Mov8 || IsImm8(imm, type) && info.OpRMImm8 != BadOp)
                     {
                         WriteOpCode(dest, default, default, type, info.Flags, info.OpRMImm8);
 
@@ -769,12 +769,6 @@ namespace ARMeilleure.CodeGen.X86
                         WriteOpCode(dest, default, default, type, info.Flags, info.OpRMImm32);
 
                         WriteInt16((short)imm);
-                    }
-                    else if (IsImm8(imm, type) && info.OpRMImm8 != BadOp)
-                    {
-                        WriteOpCode(dest, default, default, type, info.Flags, info.OpRMImm8);
-
-                        WriteByte((byte)imm);
                     }
                     else if (!source.Relocatable && IsImm32(imm, type) && info.OpRMImm32 != BadOp)
                     {
