@@ -404,7 +404,7 @@ namespace Ryujinx.Memory.Tracking
         {
             if (_disposed)
             {
-                throw new ObjectDisposedException();
+                throw new ObjectDisposedException(GetType().FullName);
             }
 
             _disposed = true;
