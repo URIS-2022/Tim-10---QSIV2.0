@@ -678,11 +678,11 @@ namespace ARMeilleure.CodeGen.X86
             if (src2.Kind == OperandKind.Constant)
             {
                 
-                WriteInstruction(src1, dest, src2, inst);
+                WriteInstruction(inst, dest, src2, src1);
             }
             else
             {
-                WriteInstruction(dest, src1, src2, inst);
+                WriteInstruction(inst, src1, src2, dest);
             }
         }
 
