@@ -34,13 +34,9 @@ namespace Ryujinx.Common.SystemInfo
         {
             ManagementObjectCollection cpuObjs = GetWMIObjects("root\\CIMV2", "SELECT * FROM Win32_Processor");
 
-            if (cpuObjs != null)
+            if (cpuObjs != null && cpuObjs.Count != 0)
             {
-                var cpuObj = cpuObjs.FirstOrDefault();
-                if(cpuObj != null)
-				{
-                    return cpuObj["Name"].ToString().Trim();
-                }
+                return cpuObjs[0]["Name"].ToString().Trim();
             }
 
             return Environment.GetEnvironmentVariable("PROCESSOR_IDENTIFIER").Trim();
