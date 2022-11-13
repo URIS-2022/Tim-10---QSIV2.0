@@ -5,7 +5,7 @@ namespace Spv.Generator
 {
     internal struct ConstantKey : IEquatable<ConstantKey>
     {
-        private readonly Instruction _constant;
+        private Instruction _constant;
 
         public ConstantKey(Instruction constant)
         {
