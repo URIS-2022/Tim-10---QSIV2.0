@@ -69,10 +69,8 @@ namespace ARMeilleure.CodeGen.X86
             return GetVecCallerSavedRegisters() ^ RegistersMask;
         }
 
-        public static int GetArgumentsOnRegsCount()
-        {
-            return 4;
-        }
+        public const int GetArgumentsOnRegsCount = 4;
+        
 
         public static int GetIntArgumentsOnRegsCount()
         {
