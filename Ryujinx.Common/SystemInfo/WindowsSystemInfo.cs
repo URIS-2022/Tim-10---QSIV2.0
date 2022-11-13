@@ -36,8 +36,9 @@ namespace Ryujinx.Common.SystemInfo
 
             if (cpuObjs != null)
             {
-                foreach (var cpuObj in cpuObjs)
-                {
+                var cpuObj = cpuObjs.FirstOrDefault();
+                if(cpuObj != null)
+				{
                     return cpuObj["Name"].ToString().Trim();
                 }
             }
