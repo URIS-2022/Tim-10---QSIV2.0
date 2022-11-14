@@ -5,7 +5,7 @@ namespace Ryujinx.Graphics.Gpu.Shader.DiskCache
     /// <summary>
     /// Disk cache load exception.
     /// </summary>
-     public class DiskCacheLoadException : Exception
+       class DiskCacheLoadException : Exception
     {
         /// <summary>
         /// Result of the cache load operation.
