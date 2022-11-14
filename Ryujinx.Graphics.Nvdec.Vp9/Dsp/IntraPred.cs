@@ -758,7 +758,7 @@ namespace Ryujinx.Graphics.Nvdec.Vp9.Dsp
             HighbdD207Predictor(dst, stride, 32, above, left, bd);
         }
 
-        private static unsafe void HighbdD207Predictor(ushort* dst, int stride, int bs, ushort* above, ushort* left)
+        private static unsafe void HighbdD207Predictor(ushort* dst, int stride, int bs, ushort* above, ushort* left, int bd)
         {
             int r, c;
 
