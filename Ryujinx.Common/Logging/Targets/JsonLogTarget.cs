@@ -35,6 +35,9 @@ namespace Ryujinx.Common.Logging
 
         public void Dispose()
         {
+            Dispose(true);
+            GC.SuppressFinalize(true);
+
             if (!_leaveOpen)
             {
                 _stream.Dispose();
