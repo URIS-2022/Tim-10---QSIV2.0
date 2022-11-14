@@ -23,9 +23,9 @@ namespace Ryujinx.Common.Logging
             _leaveOpen = leaveOpen;
         }
 
-        public void Log(object sender, LogEventArgs e)
+        public void Log(object sender, LogEventArgs args)
         {
-            string text = JsonSerializer.Serialize(e);
+            string text = JsonSerializer.Serialize(args);
 
             using (BinaryWriter writer = new BinaryWriter(_stream))
             {
