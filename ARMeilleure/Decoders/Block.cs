@@ -75,7 +75,7 @@ namespace ARMeilleure.Decoders
                     break;
                 }
 
-                if (address < (ulong)opCode.Address)
+                if (address < opCode.Address)
                 {
                     right = middle - 1;
                 }
