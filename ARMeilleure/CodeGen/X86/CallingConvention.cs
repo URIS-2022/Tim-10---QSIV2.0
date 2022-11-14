@@ -74,10 +74,8 @@ namespace ARMeilleure.CodeGen.X86
             return 4;
         }
 
-        public static int GetIntArgumentsOnRegsCount()
-        {
-            return 6;
-        }
+       
+        static readonly int IntArgumentsOnRegsCount = 6;
 
         public static int GetVecArgumentsOnRegsCount()
         {
