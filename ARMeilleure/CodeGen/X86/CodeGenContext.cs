@@ -58,10 +58,10 @@ namespace ARMeilleure.CodeGen.X86
                 argsCount = 4;
             }
 
-            // TODO
+            
             int frameSize = calleeSaveRegionSize + allocResult.SpillRegionSize;
 
-            // TODO
+            
             int callArgsAndFrameSize = frameSize + argsCount * 16;
 
             // Ensure that the Stack Pointer will be aligned to 16 bytes.
