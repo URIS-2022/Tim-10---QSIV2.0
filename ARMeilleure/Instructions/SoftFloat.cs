@@ -583,7 +583,6 @@ namespace ARMeilleure.Instructions
             switch (context.Fpcr.GetRoundingMode())
             {
                 default:
-                case FPRoundingMode.ToNearest:
                     roundUp       = (error > 0.5d || (error == 0.5d && (intMant & 1u) == 1u));
                     overflowToInf = true;
                     break;
