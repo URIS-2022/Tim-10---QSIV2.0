@@ -39,6 +39,7 @@ namespace Ryujinx.Common
             }
             catch (OperationCanceledException)
             {
+                throw;
             }
         }
 
