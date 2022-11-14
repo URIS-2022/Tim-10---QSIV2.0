@@ -46,7 +46,7 @@ namespace Ryujinx.Graphics.GAL
         public int VertexBufferCount;
         public Array32<BufferPipelineDescriptor> VertexBuffers;
 
-        // TODO: Min/max depth bounds.
+
         public DepthTestDescriptor DepthTest;
         public StencilTestDescriptor StencilTest;
         public FrontFace FrontFace;
