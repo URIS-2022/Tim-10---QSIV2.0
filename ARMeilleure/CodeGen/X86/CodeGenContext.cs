@@ -58,7 +58,7 @@ namespace ARMeilleure.CodeGen.X86
                 argsCount = 4;
             }
 
-            
+            // TODO: Align XMM save region to 16 bytes because unwinding on Windows requires it.
             int frameSize = calleeSaveRegionSize + allocResult.SpillRegionSize;
 
             

@@ -28,7 +28,7 @@ namespace ARMeilleure.CodeGen.RegisterAllocators
 
             public bool IsFixed;
         }
-
+        
         private readonly Data* _data;
 
         private ref int End => ref _data->End;

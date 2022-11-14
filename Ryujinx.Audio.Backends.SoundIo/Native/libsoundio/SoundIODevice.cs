@@ -37,7 +37,7 @@ namespace SoundIOSharp
 
         public static bool operator == (SoundIODevice obj1, SoundIODevice obj2)
         {
-            return obj1 is null ? obj2 is null : obj1.Equals(obj2);
+            return obj1 is null ? obj2 is null : Equals(obj1,obj2);
         }
 
         public static bool operator != (SoundIODevice obj1, SoundIODevice obj2)

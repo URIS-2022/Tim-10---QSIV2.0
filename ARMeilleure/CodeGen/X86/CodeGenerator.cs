@@ -957,6 +957,20 @@ namespace ARMeilleure.CodeGen.X86
             GenerateLoad(context, address, value);
         }
 
+        private static void GenerateLoad(CodeGenContext context, Operand address, Operand value)
+        {
+            switch (value.Type)
+            {
+                case OperandType.I32: context.Assembler.Mov(value, address, OperandType.I32); break;
+                case OperandType.I64: context.Assembler.Mov(value, address, OperandType.I64); break;
+                case OperandType.FP32: context.Assembler.Movd(value, address); break;
+                case OperandType.FP64: context.Assembler.Movq(value, address); break;
+                case OperandType.V128: context.Assembler.Movdqu(value, address); break;
+
+                default: Debug.Assert(false); break;
+            }
+        }
+
         private static void GenerateLoad16(CodeGenContext context, Operation operation)
         {
             Operand value   =        operation.Destination;
@@ -1598,20 +1612,6 @@ namespace ARMeilleure.CodeGen.X86
             Debug.Assert(dest.Type.IsInteger() && source.Type.IsInteger());
 
             context.Assembler.Movzx8(dest, source, OperandType.I32);
-        }
-
-        private static void GenerateLoad(CodeGenContext context, Operand address, Operand value)
-        {
-            switch (value.Type)
-            {
-                case OperandType.I32:  context.Assembler.Mov   (value, address, OperandType.I32); break;
-                case OperandType.I64:  context.Assembler.Mov   (value, address, OperandType.I64); break;
-                case OperandType.FP32: context.Assembler.Movd  (value, address);                  break;
-                case OperandType.FP64: context.Assembler.Movq  (value, address);                  break;
-                case OperandType.V128: context.Assembler.Movdqu(value, address);                  break;
-
-                default: Debug.Assert(false); break;
-            }
         }
 
         private static void GenerateStore(CodeGenContext context, Operand address, Operand value)

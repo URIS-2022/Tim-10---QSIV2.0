@@ -21,7 +21,7 @@ namespace ARMeilleure.CodeGen.X86
             RexW     = 1 << 3,
             Vex      = 1 << 4,
 
-            PrefixBit  = 16,
+            PrefixBit  = 20,
             PrefixMask = 7 << PrefixBit,
             Prefix66   = 1 << PrefixBit,
             PrefixF3   = 2 << PrefixBit,

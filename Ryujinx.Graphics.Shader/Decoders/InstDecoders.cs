@@ -850,7 +850,7 @@ namespace Ryujinx.Graphics.Shader.Decoders
         public InstConditional(ulong opcode) => _opcode = opcode;
         public int Pred => (int)((_opcode >> 16) & 0x7);
         public bool PredInv => (_opcode & 0x80000) != 0;
-        public Ccc Ccc => (Ccc)((_opcode >> 0) & 0x1F);
+        public Ccc Ccc => (Ccc)((_opcode) & 0x1F);
     }
 
     struct InstAl2p

@@ -214,7 +214,9 @@ namespace ARMeilleure.Common
                 return true;
             }
 
-            public void Reset() { }
+            public void Reset() {
+                // Stupid and smart
+            }
 
             public void Dispose() { 
                 //Will probably dispose something

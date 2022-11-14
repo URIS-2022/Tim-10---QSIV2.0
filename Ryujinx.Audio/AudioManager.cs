@@ -116,6 +116,7 @@ namespace Ryujinx.Audio
         public void Dispose()
         {
             Dispose(true);
+            GC.SuppressFinalize(true);  // Violates rule
         }
 
         protected virtual void Dispose(bool disposing)
