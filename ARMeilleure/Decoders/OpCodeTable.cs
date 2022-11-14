@@ -1339,7 +1339,7 @@ namespace ARMeilleure.Decoders
 
         private static void SetT32(string encoding, InstName name, InstEmitter emitter, MakeOp makeOp)
         {
-            string reversedEncoding =  string.Concat(encoding.AsSpan(16) + encoding.AsSpan(0, 16));
+            string reversedEncoding = encoding.Substring(16) + encoding.Substring(0, 16);
             MakeOp reversedMakeOp =
                 (InstDescriptor inst, ulong address, int opCode)
                     => makeOp(inst, address, (int)BitOperations.RotateRight((uint)opCode, 16));
