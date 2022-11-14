@@ -58,7 +58,8 @@ namespace ARMeilleure.CodeGen.X86
                 argsCount = 4;
             }
 
-            // TODO: Align XMM save region to 16 bytes because unwinding on Windows requires it.
+            // Align XMM save region to 16 bytes because unwinding on Windows requires it.
+            int AlignXMM = xmmSaveRegionSize * 16;
             int frameSize = calleeSaveRegionSize + allocResult.SpillRegionSize;
 
             // TODO: Instead of always multiplying by 16 (the largest possible size of a variable, since a V128 has 16
