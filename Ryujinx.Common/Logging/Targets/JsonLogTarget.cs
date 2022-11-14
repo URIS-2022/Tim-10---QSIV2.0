@@ -33,7 +33,7 @@ namespace Ryujinx.Common.Logging
             }
         }
 
-        public void Dispose()
+        public void Dispose(bool disposing)
         {
             if (!_leaveOpen)
             {
