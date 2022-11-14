@@ -60,11 +60,10 @@ namespace ARMeilleure.CodeGen.X86
 
             // Align XMM save region to 16 bytes because unwinding on Windows requires it.
             xmmSaveRegionSize = xmmSaveRegionSize * 16;
+            
             int frameSize = calleeSaveRegionSize + allocResult.SpillRegionSize;
 
-            // TODO: Instead of always multiplying by 16 (the largest possible size of a variable, since a V128 has 16
-            // bytes), we should calculate the exact size consumed by the arguments passed to the called functions on
-            // the stack.
+            
             int callArgsAndFrameSize = frameSize + argsCount * 16;
 
             // Ensure that the Stack Pointer will be aligned to 16 bytes.
