@@ -471,7 +471,7 @@ namespace ARMeilleure.Instructions
 
         public static void Vnmla_S(ArmEmitterContext context)
         {
-            OpCode32SimdRegS op = (OpCode32SimdRegS)context.CurrOp;
+            
 
             if (Optimizations.FastFP && Optimizations.UseSse2)
             {

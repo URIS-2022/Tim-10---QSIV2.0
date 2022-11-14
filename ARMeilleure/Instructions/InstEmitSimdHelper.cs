@@ -21,7 +21,7 @@ namespace ARMeilleure.Instructions
         public static readonly long[] EvenMasks = new long[]
         {
             14L << 56 | 12L << 48 | 10L << 40 | 08L << 32 | 06L << 24 | 04L << 16 | 02L << 8, // B
-            13L << 56 | 12L << 48 | 09L << 40 | 08L << 32 | 05L << 24 | 04L << 16 | 01L << 8 | 00L << 0, // H
+            13L << 56 | 12L << 48 | 09L << 40 | 08L << 32 | 05L << 24 | 04L << 16 | 01L << 8, // H
             11L << 56 | 10L << 48 | 09L << 40 | 08L << 32 | 03L << 24 | 02L << 16 | 01L << 8 | 00L << 0  // S
         };
 
@@ -1268,7 +1268,7 @@ namespace ARMeilleure.Instructions
 
             if ((op.Size & 1) == 0)
             {
-                const int sm0 = 2 << 6 | 2 << 4 | 2 << 2 | 0 << 0;
+                const int sm0 = 2 << 6 | 2 << 4 | 2 << 2;
                 const int sm1 = 2 << 6 | 2 << 4 | 2 << 2 | 1 << 0;
 
                 Operand zeroN = context.VectorZeroUpper64(n);

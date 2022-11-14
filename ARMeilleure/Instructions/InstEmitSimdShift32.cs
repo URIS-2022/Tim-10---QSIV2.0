@@ -342,7 +342,7 @@ namespace ARMeilleure.Instructions
             return (8 << op.Size) - op.Shift; // Shr amount is flipped.
         }
 
-        // dst64 = (Int(src64, signed) + roundConst) >> shift;
+        
         private static Operand EmitShrImm64(
             ArmEmitterContext context,
             Operand value,

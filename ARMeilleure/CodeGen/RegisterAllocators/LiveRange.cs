@@ -1,5 +1,6 @@
 using System;
 
+
 namespace ARMeilleure.CodeGen.RegisterAllocators
 {
     unsafe readonly struct LiveRange : IEquatable<LiveRange>
@@ -8,7 +9,7 @@ namespace ARMeilleure.CodeGen.RegisterAllocators
         {
             public int Start;
             public int End;
-            public LiveRange Next;
+            public LiveRange Next = new Next();
         }
 
         private readonly Data* _data;
