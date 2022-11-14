@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
+using System.Runtime.InteropServices.DllImportAttribute;
 using System.Runtime.Versioning;
 using System.Threading;
 
@@ -34,6 +34,7 @@ namespace Ryujinx.Common.Memory.PartialUnmaps
 
         [SupportedOSPlatform("windows")]
         [DllImport("kernel32.dll", SetLastError = true)]
+        
         public static extern bool CloseHandle(IntPtr hObject);
 
         [SupportedOSPlatform("windows")]
