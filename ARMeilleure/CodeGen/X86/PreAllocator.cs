@@ -459,15 +459,7 @@ namespace ARMeilleure.CodeGen.X86
 
             Operation currentNode = node;
 
-            /*if (source.Type == OperandType.I32)
-            {
-                // For 32-bits integers, we can just zero-extend to 64-bits,
-                // and then use the 64-bits signed conversion instructions.
-                Operand zex = Local(OperandType.I64);
-
-                //node = nodes.AddAfter(node, Operation(Instruction.ZeroExtend32, zex,  source));
-                //node = nodes.AddAfter(node, Operation(Instruction.ConvertToFP, dest, zex));
-            }*/
+           
              if (source.Type == OperandType.I64) 
             {
                 // For 64-bits integers, we need to do the following:
