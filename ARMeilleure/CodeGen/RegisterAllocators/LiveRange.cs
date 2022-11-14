@@ -1,5 +1,5 @@
 using System;
-using System.SerializableAttribute;
+
 
 namespace ARMeilleure.CodeGen.RegisterAllocators
 {
