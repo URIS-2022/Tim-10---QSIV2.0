@@ -35,8 +35,8 @@ namespace Ryujinx.Common.Configuration
 
         public static string CustomModsPath { get; set; }
         public static string CustomSdModsPath {get; set; }
-        public static string CustomNandPath { get; set; } // TODO: Actually implement this into VFS
-        public static string CustomSdCardPath { get; set; } // TODO: Actually implement this into VFS
+        public static string CustomNandPath { get; set; } 
+        public static string CustomSdCardPath { get; set; } 
 
         static AppDataManager()
         {
