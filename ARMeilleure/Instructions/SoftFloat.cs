@@ -2383,7 +2383,7 @@ namespace ARMeilleure.Instructions
 
         public static double FPCompareLTFpscr(double value1, double value2, bool standardFpscr)
         {
-            return FPCompareGTFpscr(value2, value1, standardFpscr);
+            return FPCompareGTFpscr(value1, value2, standardFpscr);
         }
 
         public static double FPDiv(double value1, double value2)
