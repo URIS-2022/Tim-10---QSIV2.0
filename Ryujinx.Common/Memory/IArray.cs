@@ -4,7 +4,7 @@
     /// Array interface.
     /// </summary>
     /// <typeparam name="T">Element type</typeparam>
-    public interface IArray<T> where T : unmanaged
+    public interface IArray<out T> where T : unmanaged
     {
         /// <summary>
         /// Used to index the array.
