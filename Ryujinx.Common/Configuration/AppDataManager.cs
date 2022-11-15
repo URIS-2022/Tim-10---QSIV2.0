@@ -35,8 +35,8 @@ namespace Ryujinx.Common.Configuration
 
         public static string CustomModsPath { get; set; }
         public static string CustomSdModsPath {get; set; }
-        public static string CustomNandPath { get; set; } // TODO: Actually implement this into VFS
-        public static string CustomSdCardPath { get; set; } // TODO: Actually implement this into VFS
+        public static string CustomNandPath { get; set; } 
+        public static string CustomSdCardPath { get; set; } 
 
         static AppDataManager()
         {
@@ -80,7 +80,8 @@ namespace Ryujinx.Common.Configuration
         private static void SetupBasePaths()
         {
             Directory.CreateDirectory(BaseDirPath);
-            Directory.CreateDirectory(GamesDirPath = Path.Combine(BaseDirPath, GamesDir));
+            var GamesDirPathCombine =(GamesDirPath = Path.Combine(BaseDirPath, GamesDir));
+            Directory.CreateDirectory(GamesDirPathCombine);
             Directory.CreateDirectory(ProfilesDirPath = Path.Combine(BaseDirPath, ProfilesDir));
             Directory.CreateDirectory(KeysDirPath = Path.Combine(BaseDirPath, KeysDir));
         }

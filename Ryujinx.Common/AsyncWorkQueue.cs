@@ -37,8 +37,9 @@ namespace Ryujinx.Common
                     _workerAction(item);
                 }
             }
-            catch (OperationCanceledException)
+            catch (OperationCanceledException e)
             {
+                Console.WriteLine("Error: " + e);
             }
         }
 

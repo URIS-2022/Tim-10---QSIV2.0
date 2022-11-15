@@ -100,7 +100,7 @@ namespace Ryujinx.Graphics.Gpu.Engine.Compute
     {
 #pragma warning disable CS0649
         public uint SetObject;
-        public int SetObjectClassId => (int)((SetObject >> 0) & 0xFFFF);
+        public int SetObjectClassId => (int)((SetObject) & 0xFFFF);
         public int SetObjectEngineId => (int)((SetObject >> 16) & 0x1F);
         public fixed uint Reserved04[63];
         public uint NoOperation;

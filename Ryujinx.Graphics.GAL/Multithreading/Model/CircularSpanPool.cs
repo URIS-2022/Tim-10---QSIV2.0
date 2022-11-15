@@ -78,12 +78,15 @@ namespace Ryujinx.Graphics.GAL.Multithreading.Model
 
             return MemoryMarshal.Cast<byte, T>(new Span<byte>(_pool).Slice(_consumerPtr, size));
         }
-
-        public void Dispose<T>(int length) where T : unmanaged
+        public class GarbageDisposal : IDisposable
         {
-            int size = length * Unsafe.SizeOf<T>();
 
-            _consumerPtr = _consumerPtr + size;
-        }
+            public void Dispose<T>(int length) where T : unmanaged
+            {
+                int size = length * Unsafe.SizeOf<T>();
+
+                _consumerPtr = _consumerPtr + size;
+            }
+        } 
     }
 }

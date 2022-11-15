@@ -138,7 +138,7 @@ namespace ARMeilleure.CodeGen.RegisterAllocators
                     {
                         context.IntUsedRegisters |= 1 << current.Register.Index;
                     }
-                    else /* if (interval.Register.Type == RegisterType.Vector) */
+                    else 
                     {
                         context.VecUsedRegisters |= 1 << current.Register.Index;
                     }
@@ -292,7 +292,7 @@ namespace ARMeilleure.CodeGen.RegisterAllocators
             {
                 context.IntUsedRegisters |= 1 << selectedReg;
             }
-            else /* if (regType == RegisterType.Vector) */
+            else
             {
                 context.VecUsedRegisters |= 1 << selectedReg;
             }
@@ -548,7 +548,7 @@ namespace ARMeilleure.CodeGen.RegisterAllocators
             _intervals.Insert(insertIndex, interval);
         }
 
-        private void Spill(AllocationContext context, LiveInterval interval)
+        private static void Spill(AllocationContext context, LiveInterval interval)
         {
             Debug.Assert(!interval.IsFixed,       "Trying to spill a fixed interval.");
             Debug.Assert(interval.UsesCount == 0, "Trying to spill a interval with uses.");

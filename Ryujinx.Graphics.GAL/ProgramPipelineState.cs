@@ -46,7 +46,7 @@ namespace Ryujinx.Graphics.GAL
         public int VertexBufferCount;
         public Array32<BufferPipelineDescriptor> VertexBuffers;
 
-        // TODO: Min/max depth bounds.
+
         public DepthTestDescriptor DepthTest;
         public StencilTestDescriptor StencilTest;
         public FrontFace FrontFace;
@@ -56,7 +56,7 @@ namespace Ryujinx.Graphics.GAL
         public PolygonModeMask BiasEnable;
 
         public float LineWidth;
-        // TODO: Polygon mode.
+       
         public bool DepthClampEnable;
         public bool RasterizerDiscard;
         public PrimitiveTopology Topology;

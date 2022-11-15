@@ -14,8 +14,9 @@ namespace Ryujinx.Common.Memory.PartialUnmaps
         public int WriteLock;
         public int ReaderCount;
 
-        public static int WriteLockOffset;
         public static readonly int ReaderCountOffset;
+        public static readonly int WriteLockOffset;
+
 
         /// <summary>
         /// Populates the field offsets for use when emitting native code.

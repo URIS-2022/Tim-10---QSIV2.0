@@ -2,7 +2,7 @@ using System;
 
 namespace ARMeilleure.Memory
 {
-    class InvalidAccessException : Exception
+    public class InvalidAccessException : Exception
     {
         public InvalidAccessException()
         {

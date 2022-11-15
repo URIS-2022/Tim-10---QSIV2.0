@@ -267,7 +267,7 @@ namespace Ryujinx.Graphics.Shader.CodeGen.Glsl
 
                     if (config.Stage == ShaderStage.Fragment)
                     {
-                        // TODO: There must be a better way to handle this...
+                        
                         switch (value)
                         {
                             case AttributeConsts.PositionX: return $"(gl_FragCoord.x / {DefaultNames.SupportBlockRenderScaleName}[0])";

@@ -412,17 +412,10 @@ namespace ARMeilleure.Instructions
 
             switch (context.Fpcr.GetRoundingMode())
             {
-                default:
-                case FPRoundingMode.ToNearest:
-                    roundUp       = (error > 0.5d || (error == 0.5d && (intMant & 1u) == 1u));
-                    overflowToInf = true;
-                    break;
-
                 case FPRoundingMode.TowardsPlusInfinity:
                     roundUp       = (error != 0d && !sign);
                     overflowToInf = !sign;
                     break;
-
                 case FPRoundingMode.TowardsMinusInfinity:
                     roundUp       = (error != 0d && sign);
                     overflowToInf = sign;
@@ -431,6 +424,10 @@ namespace ARMeilleure.Instructions
                 case FPRoundingMode.TowardsZero:
                     roundUp       = false;
                     overflowToInf = false;
+                    break;
+                default:
+                    roundUp = (error > 0.5d || (error == 0.5d && (intMant & 1u) == 1u));
+                    overflowToInf = true;
                     break;
             }
 
@@ -586,7 +583,6 @@ namespace ARMeilleure.Instructions
             switch (context.Fpcr.GetRoundingMode())
             {
                 default:
-                case FPRoundingMode.ToNearest:
                     roundUp       = (error > 0.5d || (error == 0.5d && (intMant & 1u) == 1u));
                     overflowToInf = true;
                     break;
@@ -2386,7 +2382,7 @@ namespace ARMeilleure.Instructions
 
         public static double FPCompareLTFpscr(double value1, double value2, bool standardFpscr)
         {
-            return FPCompareGTFpscr(value2, value1, standardFpscr);
+            return FPCompareGTFpscr(value1, value2, standardFpscr);
         }
 
         public static double FPDiv(double value1, double value2)

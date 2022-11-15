@@ -1124,13 +1124,13 @@ namespace Ryujinx.Graphics.OpenGL
             _supportBuffer.UpdateRenderScale(_renderScale, 0, 1); // Just the first element.
         }
 
-        public void SetRenderTargetColorMasks(ReadOnlySpan<uint> componentMasks)
+        public void SetRenderTargetColorMasks(ReadOnlySpan<uint> componentMask)
         {
             _componentMasks = 0;
 
-            for (int index = 0; index < componentMasks.Length; index++)
+            for (int index = 0; index < componentMask.Length; index++)
             {
-                _componentMasks |= componentMasks[index] << (index * 4);
+                _componentMasks |= componentMask[index] << (index * 4);
 
                 RestoreComponentMask(index, force: false);
             }

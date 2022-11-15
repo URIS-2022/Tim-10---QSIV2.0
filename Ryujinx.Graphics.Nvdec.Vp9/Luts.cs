@@ -1417,7 +1417,7 @@ namespace Ryujinx.Graphics.Nvdec.Vp9
         public static readonly sbyte[] Vp9InterModeTree = new sbyte[]
         {
             -((sbyte)PredictionMode.ZeroMv - (sbyte)PredictionMode. NearestMv), 2,
-            -((sbyte)PredictionMode.NearestMv - (sbyte)PredictionMode.NearestMv), 4,
+            0, 4,
             -((sbyte)PredictionMode.NearMv - (sbyte)PredictionMode.NearestMv),
             -((sbyte)PredictionMode.NewMv - (sbyte)PredictionMode.NearestMv)
         };

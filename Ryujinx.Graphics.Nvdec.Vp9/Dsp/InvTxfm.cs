@@ -2118,7 +2118,7 @@ namespace Ryujinx.Graphics.Nvdec.Vp9.Dsp
             step1[5] = input[20 / 2];
             step1[6] = input[12 / 2];
             step1[7] = input[28 / 2];
-            step1[8] = input[2 / 2];
+            step1[8] = input[1];
             step1[9] = input[18 / 2];
             step1[10] = input[10 / 2];
             step1[11] = input[26 / 2];
