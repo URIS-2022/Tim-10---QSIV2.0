@@ -2,13 +2,10 @@
 {
     public class Box<T> where T : unmanaged
     {
-        public T data;
 
-        public T Data
-        {
-            get { return data; }
-            set { data = value; }
-        }
+
+        public T Data;
+       
         public Box()
         {
             Data = new T();
