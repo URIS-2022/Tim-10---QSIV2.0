@@ -82,7 +82,8 @@ namespace Ryujinx.Common.Configuration
             Directory.CreateDirectory(BaseDirPath);
             var GamesDirPathCombine =(GamesDirPath = Path.Combine(BaseDirPath, GamesDir));
             Directory.CreateDirectory(GamesDirPathCombine);
-            Directory.CreateDirectory(ProfilesDirPath = Path.Combine(BaseDirPath, ProfilesDir));
+            var ProfilesDirPathCombine = (ProfilesDirPath = Path.Combine(BaseDirPath, ProfilesDir));
+            Directory.CreateDirectory(ProfilesDirPathCombine);
             Directory.CreateDirectory(KeysDirPath = Path.Combine(BaseDirPath, KeysDir));
         }
 
