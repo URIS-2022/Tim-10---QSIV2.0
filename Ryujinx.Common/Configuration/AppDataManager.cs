@@ -13,7 +13,6 @@ namespace Ryujinx.Common.Configuration
         private const string GamesDir = "games";
         private const string ProfilesDir = "profiles";
 
-
         public enum LaunchMode
         {
             UserProfile,
