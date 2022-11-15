@@ -21,7 +21,7 @@ namespace Ryujinx.Common.Logging
         {
             _stream    = stream;
             _leaveOpen = leaveOpen;
-        }
+        } 
 
         public void Log(object sender, LogEventArgs args)
         {
