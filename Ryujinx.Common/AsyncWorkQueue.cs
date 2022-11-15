@@ -40,7 +40,6 @@ namespace Ryujinx.Common
             catch (OperationCanceledException e)
             {
                 Console.WriteLine("Error: " + e);
-                return;
             }
         }
 
