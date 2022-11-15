@@ -17,6 +17,7 @@ namespace Ryujinx.Common.Logging
         Discard = 1
     }
 
+     //readonly
     public class AsyncLogTargetWrapper : ILogTarget
     {
         private ILogTarget _target;
