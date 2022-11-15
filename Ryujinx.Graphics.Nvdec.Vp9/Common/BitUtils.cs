@@ -10,7 +10,11 @@ namespace Ryujinx.Graphics.Nvdec.Vp9.Common
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static byte ClipPixel(int val)
         {
-            return (byte)((val > 255) ? 255 : (val < 0) ? 0 : val);
+            if (val > 255)
+            {
+                return (byte)255;
+            }
+            return (byte)((val < 0) ? 0 : val);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
