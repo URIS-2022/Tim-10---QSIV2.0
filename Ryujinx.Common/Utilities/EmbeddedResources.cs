@@ -14,12 +14,6 @@ namespace Ryujinx.Common
             ResourceAssembly = Assembly.GetAssembly(typeof(EmbeddedResources));
         }
 
-        public static byte[] Read(string filename)
-        {
-            var (assembly, path) = ResolveManifestPath(filename);
-
-            return Read(assembly, path);
-        }
 
         public static Task<byte[]> ReadAsync(string filename)
         {
@@ -44,6 +38,13 @@ namespace Ryujinx.Common
                     return mem.ToArray();
                 }
             }
+        }
+
+        public static byte[] Read(string filename)
+        {
+            var (assembly, path) = ResolveManifestPath(filename);
+
+            return Read(assembly, path);
         }
 
         public async static Task<byte[]> ReadAsync(Assembly assembly, string filename)
