@@ -19,6 +19,7 @@ namespace Ryujinx.Graphics.Nvdec.Vp9.Dsp
             }
         }
 
+
         /* This function assumes prob1 and prob2 are already within [1,255] range. */
         public static byte WeightedProb(int prob1, int prob2, int factor)
         {
