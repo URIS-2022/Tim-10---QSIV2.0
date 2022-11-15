@@ -21,6 +21,11 @@ namespace Ryujinx.Common.Logging
     {
         private readonly ILogTarget _target;
 
+        AsyncLogTargetWrapper(ILogTarget _target)
+        {
+            _target = target;
+        }
+
         private Thread _messageThread;
 
         private BlockingCollection<LogEventArgs> _messageQueue;
