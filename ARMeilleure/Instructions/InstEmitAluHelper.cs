@@ -150,16 +150,11 @@ namespace ARMeilleure.Instructions
 
             if (rd == RegisterAlias.Aarch32Pc && setFlags)
             {
-                if (setFlags)
-                {
-                    // TODO: Load SPSR etc.
-
-                    EmitBxWritePc(context, value);
-                }
-                else
-                {
-                    EmitAluWritePc(context, value);
-                }
+                EmitBxWritePc(context, value);
+            }
+            else if (rd == RegisterAlias.Aarch32Pc && setFlags == false)
+            {
+                EmitAluWritePc(context, value);
             }
             else
             {

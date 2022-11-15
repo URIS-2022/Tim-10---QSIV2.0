@@ -89,15 +89,6 @@ namespace Ryujinx.Graphics.Vulkan
 
         public void EndHostConditionalRendering()
         {
-            if (Gd.Capabilities.SupportsConditionalRendering)
-            {
-                // Gd.ConditionalRenderingApi.CmdEndConditionalRendering(CommandBuffer);
-            }
-            else
-            {
-                // throw new NotSupportedException();
-            }
-
             _activeConditionalRender?.ReleaseHostAccess();
             _activeConditionalRender = null;
         }

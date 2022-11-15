@@ -137,8 +137,6 @@ namespace ARMeilleure.Instructions
             {
                 if (Optimizations.UseF16c)
                 {
-                    Operand n = GetVec(op.Rn);
-
                     Operand res = context.AddIntrinsic(Intrinsic.X86Vcvtph2ps, GetVec(op.Rn));
                             res = context.AddIntrinsic(Intrinsic.X86Cvtss2sd, context.VectorZero(), res);
                             res = context.VectorZeroUpper64(res);

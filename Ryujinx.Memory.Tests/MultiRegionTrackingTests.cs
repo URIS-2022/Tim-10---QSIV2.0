@@ -9,7 +9,6 @@ namespace Ryujinx.Memory.Tests
     public class MultiRegionTrackingTests
     {
         private const int RndCnt = 3;
-
         private const ulong MemorySize = 0x8000;
         private const int PageSize = 4096;
 

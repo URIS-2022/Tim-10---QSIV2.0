@@ -649,12 +649,12 @@ namespace Ryujinx.Graphics.Nvdec.Vp9
                                 goto Done;
                             }
                         }
-                        else if (candidateMi.RefFrame[1] == refFrame)
+                        else if (candidateMi.RefFrame[1] == refFrame && AddMvRefListEb(candidateMi.GetSubBlockMv(1, mvRef.Col, block), ref refmvCount, mvRefList, earlyBreak))
                         {
-                            if (AddMvRefListEb(candidateMi.GetSubBlockMv(1, mvRef.Col, block), ref refmvCount, mvRefList, earlyBreak))
-                            {
+                            
+                            
                                 goto Done;
-                            }
+                            
                         }
                     }
                 }

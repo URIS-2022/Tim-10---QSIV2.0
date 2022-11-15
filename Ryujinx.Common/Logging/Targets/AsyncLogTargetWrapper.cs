@@ -63,11 +63,11 @@ namespace Ryujinx.Common.Logging
             _messageThread.Start();
         }
 
-        public void Log(object sender, LogEventArgs e)
+        public void Log(object sender, LogEventArgs args)
         {
             if (!_messageQueue.IsAddingCompleted)
             {
-                _messageQueue.TryAdd(e, _overflowTimeout);
+                _messageQueue.TryAdd(args, _overflowTimeout);
             }
         }
 

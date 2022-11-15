@@ -455,7 +455,7 @@ namespace Ryujinx.Graphics.Gpu.Shader.DiskCache
             }
 
             int offset = Unsafe.SizeOf<TocHeader>() + programIndex * Unsafe.SizeOf<OffsetAndSize>();
-            if (offset + Unsafe.SizeOf<OffsetAndSize>() > tocFileStream.Length)
+            if (tocFileStream != null && offset + Unsafe.SizeOf<OffsetAndSize>() > tocFileStream.Length)
             {
                 return (null, null);
             }

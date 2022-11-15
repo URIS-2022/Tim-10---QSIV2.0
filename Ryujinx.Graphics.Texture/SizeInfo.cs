@@ -12,8 +12,8 @@ namespace Ryujinx.Graphics.Texture
         private readonly bool _is3D;
 
         public readonly int[] AllOffsets;
-        public readonly int[] SliceSizes;
-        public readonly int[] LevelSizes;
+        public int[] SliceSizes;
+        public int[] LevelSizes;
         public int LayerSize { get; }
         public int TotalSize { get; }
 

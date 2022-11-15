@@ -7,11 +7,11 @@ namespace Ryujinx.Graphics.Shader
     public enum SamplerType
     {
         None = 0,
-        Texture1D,
-        TextureBuffer,
-        Texture2D,
-        Texture3D,
-        TextureCube,
+        Texture1D = 1,
+        TextureBuffer = 2,
+        Texture2D = 3,
+        Texture3D = 4,
+        TextureCube = 5,
 
         Mask = 0xff,
 

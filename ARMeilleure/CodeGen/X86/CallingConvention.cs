@@ -79,6 +79,7 @@ namespace ARMeilleure.CodeGen.X86
             return 6;
         }
 
+
         public static int GetVecArgumentsOnRegsCount()
         {
             return 8;
