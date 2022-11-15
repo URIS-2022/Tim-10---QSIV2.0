@@ -8,19 +8,14 @@ namespace Ryujinx.Graphics.Nvdec.Vp9.Dsp
     {
         public const int MaxProb = 255;
 
-
-        public static byte Den(uint num, uint den)
-        {
-            int p = (int)(((ulong)num * 256 + (den >> 1)) / den);
-            // (p > 255) ? 255 : (p < 1) ? 1 : p;
-            int clippedProb = p | ((255 - p) >> 23) | (p == 0 ? 1 : 0);
-            return (byte)clippedProb;
-        }
         private static byte GetProb(uint num, uint den)
         {
             Debug.Assert(den != 0);
             {
-                return Den(num, den);
+                int p = (int)(((ulong)num * 256 + (den >> 1)) / den);
+                // (p > 255) ? 255 : (p < 1) ? 1 : p;
+                int clippedProb = p | ((255 - p) >> 23) | (p == 0 ? 1 : 0);
+                return (byte)clippedProb;
             }
         }
 
