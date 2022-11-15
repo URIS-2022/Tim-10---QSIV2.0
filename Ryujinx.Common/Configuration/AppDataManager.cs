@@ -12,7 +12,7 @@ namespace Ryujinx.Common.Configuration
         // The following 3 are always part of Base Directory
         private const string GamesDir = "games";
         private const string ProfilesDir = "profiles";
-        private const string KeysDir = "system";
+
 
         public enum LaunchMode
         {
