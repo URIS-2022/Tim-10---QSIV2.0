@@ -39,7 +39,8 @@ namespace Ryujinx.Common
             }
             catch (OperationCanceledException e)
             {
-                throw new Exception("Error: " + e);
+                Console.WriteLine("Error: " + e);
+                return;
             }
         }
 
