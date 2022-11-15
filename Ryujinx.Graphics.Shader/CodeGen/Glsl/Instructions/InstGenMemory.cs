@@ -739,7 +739,7 @@ namespace Ryujinx.Graphics.Shader.CodeGen.Glsl.Instructions
 
             bool isBindless = (texOp.Flags & TextureFlags.Bindless) != 0;
 
-            // TODO: Bindless texture support. For now we just return 0.
+            
             if (isBindless)
             {
                 return NumberFormatter.FormatInt(0);
