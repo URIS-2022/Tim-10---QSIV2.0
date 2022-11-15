@@ -37,7 +37,7 @@ namespace Ryujinx.Common.Memory.PartialUnmaps
 
             while (Interlocked.CompareExchange(ref WriteLock, 1, 0) != 0)
 
-            Interlocked.Increment(ref ReaderCount);
+                Interlocked.Increment(ref ReaderCount);
 
             Interlocked.Exchange(ref WriteLock, 0);
         }
