@@ -523,7 +523,6 @@ namespace Ryujinx.Graphics.Shader.Instructions
             for (int index = 0; index < res.Length; index++)
             {
                 res[index] = context.FPFusedMultiplyAdd(srcA[index], srcB[index], srcC[index]);
-                res[index] = context.FPSaturate(res[index], saturate);
             }
 
             context.Copy(GetDest(rd), GetHalfPacked(context, swizzle, res, rd));
