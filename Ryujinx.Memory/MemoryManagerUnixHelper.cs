@@ -8,7 +8,7 @@ namespace Ryujinx.Memory
         [Flags]
         public enum MmapProts : uint
         {
-            None = 0,
+            PROT_NONE = 0,
             PROT_READ = 1,
             PROT_WRITE = 2,
             PROT_EXEC = 4
