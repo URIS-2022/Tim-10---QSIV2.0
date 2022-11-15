@@ -38,7 +38,7 @@ namespace Ryujinx.Common.Utilities
         {
             if (Unsafe.SizeOf<T>() > (uint)Unsafe.SizeOf<Buffer16>())
             {
-                throw new ArgumentException();
+                throw new ArgumentException("Unsafe size of argument");
             }
 
             return ref MemoryMarshal.GetReference(AsSpan<T>());
