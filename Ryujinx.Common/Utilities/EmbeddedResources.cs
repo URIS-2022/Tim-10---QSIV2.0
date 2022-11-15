@@ -9,7 +9,7 @@ namespace Ryujinx.Common
     {
         private readonly static Assembly ResourceAssembly;
 
-        static string EmbeddedResources()
+        static EmbeddedResources()
         {
             ResourceAssembly = Assembly.GetAssembly(typeof(EmbeddedResources));
         }
