@@ -87,6 +87,6 @@ namespace Ryujinx.Graphics.GAL.Multithreading.Model
 
                 _consumerPtr = _consumerPtr + size;
             }
-        }
+        } 
     }
 }
