@@ -19,7 +19,7 @@ namespace Ryujinx.Common.Logging
 
     public class AsyncLogTargetWrapper : ILogTarget
     {
-        private ILogTarget _target;
+        private readonly ILogTarget _target;
 
         private Thread _messageThread;
 
