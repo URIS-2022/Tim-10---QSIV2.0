@@ -471,6 +471,7 @@ namespace Ryujinx.Graphics.Shader.Instructions
             res[1] = GetFPComparison(context, cmpOp, srcA[1], srcB[1]);
 
             Operand pred = GetPredicate(context, srcPred, srcPredInv);
+            
 
             res[0] = GetPredLogicalOp(context, logicOp, res[0], pred);
             res[1] = GetPredLogicalOp(context, logicOp, res[1], pred);

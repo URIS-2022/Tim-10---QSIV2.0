@@ -36,9 +36,9 @@ namespace Ryujinx.Common.Memory.PartialUnmaps
         {
             // Must take write lock for a very short time to become a reader.
 
-            while (Interlocked.CompareExchange(ref WriteLock, 1, 0) != 0) { }
+            while (Interlocked.CompareExchange(ref WriteLock, 1, 0) != 0)
 
-            Interlocked.Increment(ref ReaderCount);
+                Interlocked.Increment(ref ReaderCount);
 
             Interlocked.Exchange(ref WriteLock, 0);
         }
