@@ -2,8 +2,6 @@
 {
     public class Box<T> where T : unmanaged
     {
-
-
         public T Data;
        
         public Box()
