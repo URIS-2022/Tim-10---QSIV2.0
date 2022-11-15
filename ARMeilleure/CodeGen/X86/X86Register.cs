@@ -21,7 +21,7 @@ namespace ARMeilleure.CodeGen.X86
         R14 = 14,
         R15 = 15,
 
-        Xmm0  = 0,
+        Xmm0  = Rax,
         Xmm1  = 1,
         Xmm2  = 2,
         Xmm3  = 3,
