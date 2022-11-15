@@ -86,9 +86,9 @@ namespace Ryujinx.Common.Configuration
             Directory.CreateDirectory(ProfilesDirPathCombine);
             
             var KeysDirPathCombine = (KeysDirPath = Path.Combine(BaseDirPath, ProfilesDir));
+            Directory.CreateDirectory(ProfilesDirPath = Path.Combine(BaseDirPath, ProfilesDir));
+            var KeysDirPathCombine = (KeysDirPath = Path.Combine(BaseDirPath, KeysDir));
             Directory.CreateDirectory(KeysDirPathCombine);
-            
-
         }
 
         public static string GetModsPath()   => CustomModsPath ?? Directory.CreateDirectory(Path.Combine(BaseDirPath, DefaultModsDir)).FullName;
