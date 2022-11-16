@@ -83,7 +83,7 @@ namespace Ryujinx.HLE.HOS.Services.Account.Acc
 
         public readonly UInt128 ToUInt128()
         {
-            return new UInt128(Low, High);
+            return new UInt128((ulong)Low, (ulong)High);
         }
     }
 }

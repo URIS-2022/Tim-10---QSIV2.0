@@ -1,4 +1,5 @@
-﻿using Ryujinx.Cpu;
+﻿using Ryujinx.Common.Utilities;
+using Ryujinx.Cpu;
 using Ryujinx.HLE.Utilities;
 using System;
 
@@ -12,7 +13,7 @@ namespace Ryujinx.HLE.HOS.Services.Time.Clock
 
         public SteadyClockCore()
         {
-            _clockSourceId      = new UInt128(Guid.NewGuid().ToByteArray());
+            _clockSourceId = UInt128Utils.CreateRandom();
             _isRtcResetDetected = false;
             _isInitialized      = false;
         }

@@ -98,7 +98,7 @@ namespace Ryujinx.Graphics.Nvdec.FFmpeg.Native
 
         [DllImport(AvUtilLibraryName, CallingConvention = CallingConvention.Cdecl)]
 
-        internal static extern void av_log_format_line(void* ptr, AVLog level, [MarshalAs(UnmanagedType.LPUTF8Str)] string fmt, byte* vl, byte* line, int lineSize, int* printPrefix);
+        internal static unsafe extern void av_log_format_line(void* ptr, AVLog level, [MarshalAs(UnmanagedType.LPUTF8Str)] string fmt, byte* vl, byte* line, int lineSize, int* printPrefix);
 
         [DllImport(AvCodecLibraryName, CallingConvention = CallingConvention.Cdecl)]
         internal static unsafe extern AVCodec* avcodec_find_decoder(AVCodecID id);

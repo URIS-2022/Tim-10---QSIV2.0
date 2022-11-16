@@ -1,4 +1,5 @@
-﻿using Ryujinx.HLE.Utilities;
+﻿using Ryujinx.Common.Utilities;
+using Ryujinx.HLE.Utilities;
 using System;
 using System.Runtime.InteropServices;
 
@@ -35,8 +36,8 @@ namespace Ryujinx.HLE.HOS.Services.Time.Clock
         {
             return new SteadyClockTimePoint
             {
-                TimePoint     = 0,
-                ClockSourceId = new UInt128(Guid.NewGuid().ToByteArray())
+                TimePoint = 0,
+                ClockSourceId = UInt128Utils.CreateRandom()
             };
         }
     }

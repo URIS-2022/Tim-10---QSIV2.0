@@ -1,5 +1,6 @@
 using Ryujinx.Common;
 using Ryujinx.Common.Logging;
+using Ryujinx.Common.Utilities;
 using Ryujinx.HLE.HOS.Services.Nifm.StaticService.GeneralService;
 using Ryujinx.HLE.HOS.Services.Nifm.StaticService.Types;
 using Ryujinx.HLE.Utilities;
@@ -78,7 +79,7 @@ namespace Ryujinx.HLE.HOS.Services.Nifm.StaticService
 
             NetworkProfileData networkProfile = new NetworkProfileData
             {
-                Uuid = new UInt128(Guid.NewGuid().ToByteArray())
+                Uuid = UInt128Utils.CreateRandom()
             };
 
             networkProfile.IpSettingData.IpAddressSetting = new IpAddressSetting(interfaceProperties, unicastAddress);
