@@ -6,7 +6,7 @@ namespace Ryujinx.Common.System
     public class DisplaySleep
     {
         [Flags]
-        enum ExecutionState : uint
+        enum EXECUTION_STATE : uint
         {
             ES_CONTINUOUS = 0x80000000,
             ES_DISPLAY_REQUIRED = 0x00000002,
@@ -14,13 +14,13 @@ namespace Ryujinx.Common.System
         }
 
         [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        static extern ExecutionState SetThreadExecutionState(ExecutionState esFlags);
+        static extern EXECUTION_STATE SetThreadExecutionState(EXECUTION_STATE esFlags);
 
         static public void Prevent()
         {
             if (OperatingSystem.IsWindows())
             {
-                SetThreadExecutionState(ExecutionState.ES_CONTINUOUS | ExecutionState.ES_SYSTEM_REQUIRED | ExecutionState.ES_DISPLAY_REQUIRED);
+                SetThreadExecutionState(EXECUTION_STATE.ES_CONTINUOUS | EXECUTION_STATE.ES_SYSTEM_REQUIRED | EXECUTION_STATE.ES_DISPLAY_REQUIRED);
             }
         }
         
@@ -28,7 +28,7 @@ namespace Ryujinx.Common.System
         {
             if (OperatingSystem.IsWindows())
             {
-                SetThreadExecutionState(ExecutionState.ES_CONTINUOUS);  
+                SetThreadExecutionState(EXECUTION_STATE.ES_CONTINUOUS);  
             }
         }
     }
