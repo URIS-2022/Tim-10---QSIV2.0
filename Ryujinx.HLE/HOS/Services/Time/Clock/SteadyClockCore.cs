@@ -13,7 +13,7 @@ namespace Ryujinx.HLE.HOS.Services.Time.Clock
 
         public SteadyClockCore()
         {
-            _clockSourceId = UInt128Utils.CreateRandom();
+            _clockSourceId = new UInt128(Guid.NewGuid().ToByteArray());
             _isRtcResetDetected = false;
             _isInitialized      = false;
         }

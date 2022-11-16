@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ryujinx.HLE.Utilities;
+using System;
 using System.Runtime.InteropServices;
 
 namespace Ryujinx.HLE.HOS.Services.Time.Types

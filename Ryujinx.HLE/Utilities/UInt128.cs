@@ -1,49 +1,45 @@
-﻿using LibHac.Account;
-using Ryujinx.HLE.Utilities;
-using System;
+﻿using System;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 
-namespace Ryujinx.HLE.HOS.Services.Account.Acc
+namespace Ryujinx.HLE.Utilities
 {
     [StructLayout(LayoutKind.Sequential)]
-    public struct UserId : IEquatable<UserId>
+    public struct UInt128 : IEquatable<UInt128>
     {
-        public readonly long High;
         public readonly long Low;
+        public readonly long High;
 
         public bool IsNull => (Low | High) == 0;
 
-        public static UserId Null => new UserId(0, 0);
-
-        public UserId(long low, long high)
+        public UInt128(long low, long high)
         {
-            Low  = low;
+            Low = low;
             High = high;
         }
 
-        public UserId(byte[] bytes)
+        public UInt128(byte[] bytes)
         {
-            High = BitConverter.ToInt64(bytes, 0);
-            Low  = BitConverter.ToInt64(bytes, 8);
+            Low = BitConverter.ToInt64(bytes, 0);
+            High = BitConverter.ToInt64(bytes, 8);
         }
 
-        public UserId(string hex)
+        public UInt128(string hex)
         {
             if (hex == null || hex.Length != 32 || !hex.All("0123456789abcdefABCDEF".Contains))
             {
                 throw new ArgumentException("Invalid Hex value!", nameof(hex));
             }
 
-            Low  = Convert.ToInt64(hex.Substring(16), 16);
+            Low = Convert.ToInt64(hex.Substring(16), 16);
             High = Convert.ToInt64(hex.Substring(0, 16), 16);
         }
 
         public void Write(BinaryWriter binaryWriter)
         {
-            binaryWriter.Write(High);
             binaryWriter.Write(Low);
+            binaryWriter.Write(High);
         }
 
         public override string ToString()
@@ -51,22 +47,22 @@ namespace Ryujinx.HLE.HOS.Services.Account.Acc
             return High.ToString("x16") + Low.ToString("x16");
         }
 
-        public static bool operator ==(UserId x, UserId y)
+        public static bool operator ==(UInt128 x, UInt128 y)
         {
             return x.Equals(y);
         }
 
-        public static bool operator !=(UserId x, UserId y)
+        public static bool operator !=(UInt128 x, UInt128 y)
         {
             return !x.Equals(y);
         }
 
         public override bool Equals(object obj)
         {
-            return obj is UserId userId && Equals(userId);
+            return obj is UInt128 uint128 && Equals(uint128);
         }
 
-        public bool Equals(UserId cmpObj)
+        public bool Equals(UInt128 cmpObj)
         {
             return Low == cmpObj.Low && High == cmpObj.High;
         }
@@ -74,16 +70,6 @@ namespace Ryujinx.HLE.HOS.Services.Account.Acc
         public override int GetHashCode()
         {
             return HashCode.Combine(Low, High);
-        }
-
-        public readonly Uid ToLibHacUid()
-        {
-            return new Uid((ulong)High, (ulong)Low);
-        }
-
-        public readonly UInt128 ToUInt128()
-        {
-            return new UInt128(Low,High);
         }
     }
 }

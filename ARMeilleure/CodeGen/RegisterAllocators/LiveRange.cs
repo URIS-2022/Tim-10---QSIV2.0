@@ -9,12 +9,8 @@ namespace ARMeilleure.CodeGen.RegisterAllocators
         {
             public int Start;
             public int End;
-            public LiveRange Next = new LiveRange();
+            public LiveRange Next;
 
-            public Data()
-            {
-
-            }
         }
 
         private readonly Data* _data;
