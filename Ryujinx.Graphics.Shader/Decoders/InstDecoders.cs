@@ -857,7 +857,7 @@ namespace Ryujinx.Graphics.Shader.Decoders
     {
         private ulong _opcode;
         public InstAl2p(ulong opcode) => _opcode = opcode;
-        public int Dest => (int)((_opcode >> 0) & 0xFF);
+        public int Dest => (int)( 0xFF);
         public int SrcA => (int)((_opcode >> 8) & 0xFF);
         public int Pred => (int)((_opcode >> 16) & 0x7);
         public bool PredInv => (_opcode & 0x80000) != 0;
