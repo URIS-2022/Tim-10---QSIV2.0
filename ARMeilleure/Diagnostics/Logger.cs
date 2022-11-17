@@ -8,12 +8,9 @@ namespace ARMeilleure.Diagnostics
     {
         private static long _startTime;
 
-        private static long[] _accumulatedTime;
+        private static long[] _accumulatedTime = new long[(int)PassName.Count];
 
-        static Logger()
-        {
-            _accumulatedTime = new long[(int)PassName.Count];
-        }
+     
 
         [Conditional("M_DEBUG")]
         public static void StartPass(PassName name)
