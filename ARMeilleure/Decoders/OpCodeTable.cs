@@ -1434,7 +1434,7 @@ namespace ARMeilleure.Decoders
                 }
                 else if (chr != '0')
                 {
-                    throw new ArgumentException(nameof(encoding));
+                    throw new ArgumentException(null,nameof(encoding));
                 }
             }
 
