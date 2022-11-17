@@ -194,12 +194,11 @@ namespace Ryujinx.Audio.Renderer.Dsp
                             {
                                 voiceState.LoopCount++;
 
-                                if (waveBuffer.LoopCount >= 0)
+                                if (waveBuffer.LoopCount >= 0 && decodedSampleCount == 0 || voiceState.LoopCount > waveBuffer.LoopCount)
                                 {
-                                    if (decodedSampleCount == 0 || voiceState.LoopCount > waveBuffer.LoopCount)
-                                    {
+                                    
                                         voiceState.MarkEndOfBufferWaveBufferProcessing(ref waveBuffer, ref waveBufferIndex, ref waveBufferConsumed, ref playedSampleCount);
-                                    }
+                                    
                                 }
 
                                 if (decodedSampleCount == 0)

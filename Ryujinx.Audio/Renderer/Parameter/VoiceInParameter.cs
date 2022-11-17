@@ -306,7 +306,7 @@ namespace Ryujinx.Audio.Renderer.Parameter
             /// <summary>
             /// Default decoding behaviour.
             /// </summary>
-            Default = 0,
+            None = 0,
 
             /// <summary>
             /// Reset the played samples accumulator when looping.

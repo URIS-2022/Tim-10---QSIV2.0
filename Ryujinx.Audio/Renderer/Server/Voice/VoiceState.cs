@@ -310,7 +310,7 @@ namespace Ryujinx.Audio.Renderer.Server.Voice
 
             parameter.ChannelResourceIds.AsSpan().CopyTo(ChannelResourceIds.AsSpan());
 
-            DecodingBehaviour behaviour = DecodingBehaviour.Default;
+            DecodingBehaviour behaviour = DecodingBehaviour.None;
 
             if (behaviourContext.IsDecodingBehaviourFlagSupported())
             {
