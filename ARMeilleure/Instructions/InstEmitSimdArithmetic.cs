@@ -3870,9 +3870,10 @@ namespace ARMeilleure.Instructions
 
             if (sizeF == 0)
             {
+                var isMaxNumPositiveInfinity = isMaxNum ? float.NegativeInfinity : float.PositiveInfinity;
                 Operand negInfMask = scalar
-                    ? X86GetScalar     (context, isMaxNum ? float.NegativeInfinity : float.PositiveInfinity)
-                    : X86GetAllElements(context, isMaxNum ? float.NegativeInfinity : float.PositiveInfinity);
+                    ? X86GetScalar     (context, isMaxNumPositiveInfinity)
+                    : X86GetAllElements(context, isMaxNumPositiveInfinity);
 
                 Operand nMask = context.AddIntrinsic(Intrinsic.X86Andnps, mQNaNMask, nQNaNMask);
                 Operand mMask = context.AddIntrinsic(Intrinsic.X86Andnps, nQNaNMask, mQNaNMask);
