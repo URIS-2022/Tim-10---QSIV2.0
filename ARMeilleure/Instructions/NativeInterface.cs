@@ -9,13 +9,13 @@ namespace ARMeilleure.Instructions
     {
         private class ThreadContext
         {
-            public ExecutionContext Context { get; }
+            public ExecutionContext Kontekst { get; }
             public IMemoryManager Memory { get; }
             public Translator Translator { get; }
 
-            public ThreadContext(ExecutionContext context, IMemoryManager memory, Translator translator)
+            public ThreadContext(ExecutionContext kontekst, IMemoryManager memory, Translator translator)
             {
-                Context = context;
+                Kontekst = kontekst;
                 Memory = memory;
                 Translator = translator;
             }
@@ -214,7 +214,7 @@ namespace ARMeilleure.Instructions
 
         public static ExecutionContext GetContext()
         {
-            return Context.Context;
+            return Context.Kontekst;
         }
 
         public static IMemoryManager GetMemoryManager()

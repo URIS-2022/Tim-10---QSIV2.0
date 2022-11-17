@@ -54,7 +54,7 @@ namespace Ryujinx.Graphics.Gpu.Shader.DiskCache
             /// <summary>
             /// Header padding.
             /// </summary>
-            public uint Padding;
+            
 
             /// <summary>
             /// Timestamp of when the file was first created.
@@ -715,7 +715,6 @@ namespace Ryujinx.Graphics.Gpu.Shader.DiskCache
             header.Magic = magic;
             header.FormatVersion = FileFormatVersionPacked;
             header.CodeGenVersion = codegenVersion;
-            header.Padding = 0;
             header.Reserved = 0;
             header.Timestamp = timestamp;
 

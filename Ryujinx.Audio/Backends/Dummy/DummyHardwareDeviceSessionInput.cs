@@ -34,7 +34,9 @@ namespace Ryujinx.Audio.Backends.Dummy
             return _volume;
         }
 
-        public void PrepareToClose() { }
+        public void PrepareToClose() {
+            throw new NotSupportedException();
+        }
 
         public void QueueBuffer(AudioBuffer buffer)
         {

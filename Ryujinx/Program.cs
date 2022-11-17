@@ -283,7 +283,7 @@ namespace Ryujinx
             DiscordIntegrationModule.Exit();
 
             Ptc.Dispose();
-            PtcProfiler.Dispose();
+            PtcProfiler.DisposeMetoda();
 
             Logger.Shutdown();
         }
