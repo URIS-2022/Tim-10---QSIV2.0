@@ -37,7 +37,6 @@ namespace Ryujinx.HLE.HOS.Diagnostics.Demangler.Ast
 
         public override void PrintRight(TextWriter writer)
         {
-            // FIXME: detect if previous char was a ].
             writer.Write(" ");
 
             writer.Write("[");
