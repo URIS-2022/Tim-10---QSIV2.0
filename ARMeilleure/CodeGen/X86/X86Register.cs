@@ -30,7 +30,6 @@ namespace ARMeilleure.CodeGen.X86
         Xmm6  = 6,
         Xmm7  = 7,
         Xmm8  = 8,
-        Xmm9  = 9,
         Xmm10 = 10,
         Xmm11 = 11,
         Xmm12 = 12,

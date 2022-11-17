@@ -1374,7 +1374,8 @@ namespace ARMeilleure.Decoders
             }
             else if (thumbEncoding.StartsWith("11110010"))
             {
-                thumbEncoding = "11101111" + encoding.Substring(8);
+                //thumbEncoding = "11101111" + encoding.Substring(8);
+                thumbEncoding = string.Concat("11101111", encoding.AsSpan(8));
             }
             else if (thumbEncoding.StartsWith("11110011"))
             {
