@@ -336,7 +336,7 @@ namespace ARMeilleure.Instructions
             {
                 EmitNZFlagsCheck(context, res);
 
-                EmitSbcsCCheck(context, m, n);
+                EmitSbcsCCheck(context, n, m);
                 EmitSubsVCheck(context, m, n, res);
             }
 
