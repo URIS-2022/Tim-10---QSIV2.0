@@ -53,7 +53,7 @@ namespace ARMeilleure.CodeGen.X86
                        (1 << (int)X86Register.Xmm4) |
                        (1 << (int)X86Register.Xmm5);
             }
-            else /* if (GetCurrentCallConv() == CallConvName.SystemV) */
+            else 
             {
                 return RegistersMask;
             }

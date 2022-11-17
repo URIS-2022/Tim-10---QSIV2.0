@@ -82,14 +82,14 @@ namespace Ryujinx.HLE.HOS.Services.SurfaceFlinger
             MaxBufferCountCached = 0;
         }
 
-        public int GetMinUndequeuedBufferCountLocked(bool async)
+        public int GetMinUndequeuedBufferCountLocked(bool asyncK)
         {
             if (!UseAsyncBuffer)
             {
                 return 0;
             }
 
-            if (DequeueBufferCannotBlock || async)
+            if (DequeueBufferCannotBlock || asyncK)
             {
                 return MaxAcquiredBufferCount + 1;
             }
@@ -97,9 +97,9 @@ namespace Ryujinx.HLE.HOS.Services.SurfaceFlinger
             return MaxAcquiredBufferCount;
         }
 
-        public int GetMinMaxBufferCountLocked(bool async)
+        public int GetMinMaxBufferCountLocked(bool asynck)
         {
-            return GetMinUndequeuedBufferCountLocked(async);
+            return GetMinUndequeuedBufferCountLocked(asynck);
         }
 
         public void UpdateMaxBufferCountCachedLocked(int slot)
