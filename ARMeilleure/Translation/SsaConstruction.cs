@@ -10,7 +10,7 @@ namespace ARMeilleure.Translation
 {
     static partial class Ssa
     {
-        private class DefMap
+        private sealed class DefMap
         {
             private readonly Dictionary<int, Operand> _map;
             private readonly BitMap _phiMasks;
@@ -21,9 +21,9 @@ namespace ARMeilleure.Translation
                 _phiMasks = new BitMap(Allocators.Default, RegisterConsts.TotalCount);
             }
 
-            public bool TryAddOperand(int key, Operand operand)
+            public void TryAddOperand(int key, Operand operand)
             {
-                return _map.TryAdd(key, operand);
+                
             }
 
             public bool TryGetOperand(int key, out Operand operand)
