@@ -91,6 +91,16 @@ namespace ARMeilleure.CodeGen.X86
             }
         }
 
+        public static void MethodJovana(CompilerContext cctx)
+        {
+            ControlFlowGraph cfg = cctx.Cfg;
+            if (cctx.Options.HasFlag(CompilerOptions.SsaForm))
+            {
+                Optimizer.RunPass(cfg);
+            }
+           
+        }
+
         public static CompiledFunction Generate(CompilerContext cctx)
         {
             ControlFlowGraph cfg = cctx.Cfg;
@@ -99,12 +109,9 @@ namespace ARMeilleure.CodeGen.X86
 
             if (cctx.Options.HasFlag(CompilerOptions.Optimize))
             {
-                if (cctx.Options.HasFlag(CompilerOptions.SsaForm))
-                {
-                    Optimizer.RunPass(cfg);
-                }
-
+                MethodJovana(cctx);
                 BlockPlacement.RunPass(cfg);
+
             }
 
             X86Optimizer.RunPass(cfg);
