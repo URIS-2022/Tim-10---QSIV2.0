@@ -34,7 +34,7 @@ namespace ARMeilleure.Diagnostics
 
             for (int index = 0; index < _indentLevel; index++)
             {
-                _builder.Append(" ");
+                _builder.Append(Indentation);
             }
         }
 

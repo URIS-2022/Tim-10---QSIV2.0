@@ -715,7 +715,7 @@ namespace Ryujinx.Graphics.Gpu.Shader.DiskCache
             header.Magic = magic;
             header.FormatVersion = FileFormatVersionPacked;
             header.CodeGenVersion = codegenVersion;
-            header.Reserved = 0;
+              header.Reserved = 0;
             header.Timestamp = timestamp;
 
             if (tocFileStream.Length > 0)

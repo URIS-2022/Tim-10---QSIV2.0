@@ -42,7 +42,7 @@ namespace Ryujinx.HLE.HOS
                     return new ArmProcessContext<MemoryManagerHostMapped>(pid, _cpuEngine, _gpu, memoryManagerHostMapped, for64Bit);
 
                 default:
-                    throw new ArgumentOutOfRangeException();
+                    throw new ArgumentOutOfRangeException("context", "Error mesagges");
             }
         }
     }
