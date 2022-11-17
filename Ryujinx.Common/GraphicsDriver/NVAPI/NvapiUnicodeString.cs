@@ -33,7 +33,10 @@ namespace Ryujinx.Common.GraphicsDriver.NVAPI
         {
             text += '\0';
             fixed (char* textPtr = text)
-            fixed (byte* data = _data) { }
+            fixed (byte* data = _data)
+            {
+                //komentar
+            }
             
         }
     }

@@ -1430,7 +1430,6 @@ namespace ARMeilleure.Instructions
                 switch (fpcr.GetRoundingMode())
                 {
                     default:
-                    case FPRoundingMode.ToNearest:            overflowToInf = true;  break;
                     case FPRoundingMode.TowardsPlusInfinity:  overflowToInf = !sign; break;
                     case FPRoundingMode.TowardsMinusInfinity: overflowToInf = sign;  break;
                     case FPRoundingMode.TowardsZero:          overflowToInf = false; break;
