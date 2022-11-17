@@ -1,7 +1,7 @@
 using ARMeilleure.IntermediateRepresentation;
 using System;
 using System.Collections.Generic;
-
+using System.Linq;
 using static ARMeilleure.IntermediateRepresentation.Operand.Factory;
 using static ARMeilleure.IntermediateRepresentation.Operation.Factory;
 

@@ -32,7 +32,7 @@ namespace Ryujinx.Graphics.GAL.Multithreading.Model
         {
             if (_packedLengthId > 0)
             {
-                renderer.SpanPool.GetRidOf<T>(_packedLengthId);
+                renderer.SpanPool.Dispose<T>(_packedLengthId);
             }
         }
     }
