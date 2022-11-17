@@ -903,7 +903,8 @@ namespace ARMeilleure.Instructions
             EmitVectorTernaryOpSimd32(context, (d, n, m) =>
             {
                 Operand res = context.AddIntrinsic(inst1, n, m);
-                return res = context.AddIntrinsic(inst2, d, res);
+                Operand res2 = context.AddIntrinsic(inst2, d, res);
+                return res2;
             });
         }
 

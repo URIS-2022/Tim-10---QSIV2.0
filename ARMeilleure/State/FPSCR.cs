@@ -2,7 +2,7 @@ using System;
 
 namespace ARMeilleure.State
 {
-    [Flags]
+    
     public enum FPSCR : uint
     {
         V = 1u << 28,

@@ -53,7 +53,7 @@ namespace ARMeilleure.Translation
 
         private volatile int _threadCount;
 
-        // FIXME: Remove this once the init logic of the emulator will be redone.
+     
         public static readonly ManualResetEvent IsReadyForTranslation = new(false);
 
         public Translator(IJitMemoryAllocator allocator, IMemoryManager memory, bool for64Bits)
