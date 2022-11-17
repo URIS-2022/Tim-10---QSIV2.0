@@ -8,7 +8,7 @@ namespace Ryujinx.Ava.Ui.Controls
 {
     internal class KeyValueConverter : IValueConverter
     {
-        public static KeyValueConverter Instance = new();
+        public static readonly KeyValueConverter Instance = new();
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

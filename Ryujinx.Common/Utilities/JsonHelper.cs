@@ -34,7 +34,7 @@ namespace Ryujinx.Common.Utilities
                         }
                         else
                         {
-                            builder.Append("_");
+                            builder.Append('_');
                             builder.Append(char.ToLowerInvariant(c));
                         }
                     }
