@@ -149,7 +149,7 @@ namespace Ryujinx.Ava.Ui.Applet
             }
         }
 
-        public bool DisplayErrorAppletDialog(string title, string message, string[] buttons)
+        public bool DisplayErrorAppletDialog(string title, string message, string[] buttonsText)
         {
             ManualResetEvent dialogCloseEvent = new(false);
 
@@ -159,7 +159,7 @@ namespace Ryujinx.Ava.Ui.Applet
             {
                 try
                 {
-                    ErrorAppletWindow msgDialog = new(_parent, buttons, message)
+                    ErrorAppletWindow msgDialog = new(_parent, buttonsText, message)
                     {
                         Title = title,
                         WindowStartupLocation = WindowStartupLocation.CenterScreen,
@@ -168,7 +168,7 @@ namespace Ryujinx.Ava.Ui.Applet
 
                     object response = await msgDialog.Run();
 
-                    if (response != null && buttons.Length > 1 && (int)response != buttons.Length - 1)
+                    if (response != null && buttonsText.Length > 1 && (int)response != buttonsText.Length - 1)
                     {
                         showDetails = true;
                     }
