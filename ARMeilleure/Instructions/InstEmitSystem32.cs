@@ -111,8 +111,6 @@ namespace ARMeilleure.Instructions
             {
                 // Special behavior: copy NZCV flags into APSR.
                 EmitSetNzcv(context, context.Call(info));
-
-                return;
             }
             else
             {
