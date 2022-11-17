@@ -260,7 +260,7 @@ namespace Ryujinx.Ava
             DiscordIntegrationModule.Exit();
 
             Ptc.Dispose();
-            PtcProfiler.Dispose();
+            PtcProfiler.DisposeMetoda();
 
             Logger.Shutdown();
         }

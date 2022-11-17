@@ -396,7 +396,7 @@ namespace ARMeilleure.Translation.PTC
             _waitEvent.WaitOne();
         }
 
-        public static void Dispose()
+        public static void DisposeMetoda()
         {
             if (!_disposed)
             {

@@ -81,9 +81,7 @@ namespace ARMeilleure.Translation
             TypeAttributes.AnsiClass |
             TypeAttributes.AutoClass;
 
-        private const MethodImplAttributes ImplAttributes =
-            MethodImplAttributes.Runtime |
-            MethodImplAttributes.Managed;
+        
 
         private const MethodAttributes InvokeAttributes =
             MethodAttributes.Public    |
@@ -97,9 +95,7 @@ namespace ARMeilleure.Translation
         {
             TypeBuilder builder = _modBuilder.DefineType(name, DelegateTypeAttributes, typeof(MulticastDelegate));
 
-            builder.DefineConstructor(CtorAttributes, CallingConventions.Standard, _delegateCtorSignature).SetImplementationFlags(ImplAttributes);
 
-            builder.DefineMethod("Invoke", InvokeAttributes, returnType, parameters).SetImplementationFlags(ImplAttributes);
 
             return builder.CreateTypeInfo();
         }
