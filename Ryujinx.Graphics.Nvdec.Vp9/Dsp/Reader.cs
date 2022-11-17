@@ -180,9 +180,9 @@ namespace Ryujinx.Graphics.Nvdec.Vp9.Dsp
             sbyte i = 0;
 
             while ((i = tree[i + Read(probs[i >> 1])]) > 0)
-            {
+            
                 continue;
-            }
+            
 
             return -i;
         }

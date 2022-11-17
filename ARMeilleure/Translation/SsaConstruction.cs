@@ -23,7 +23,7 @@ namespace ARMeilleure.Translation
 
             public void TryAddOperand(int key, Operand operand)
             {
-                
+                throw new NotSupportedException();
             }
 
             public bool TryGetOperand(int key, out Operand operand)

@@ -74,7 +74,7 @@ namespace Ryujinx.Audio.Renderer.Server
         /// <summary>
         /// The dispose state.
         /// </summary>
-        private int _disposeState;
+        
 
         /// <summary>
         /// Create a new <see cref="AudioRendererManager"/>.

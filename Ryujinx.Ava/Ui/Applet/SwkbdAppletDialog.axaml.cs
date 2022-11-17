@@ -114,7 +114,7 @@ namespace Ryujinx.Ava.Ui.Controls
                 await contentDialog.ShowAsync();
                 contentDialog.Closed -= handler;
                 overlay.Close();
-            };
+            }
 
             await overlay.ShowDialog(window);
 
