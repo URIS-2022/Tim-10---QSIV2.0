@@ -461,7 +461,7 @@ namespace ARMeilleure.Instructions
 
         public static void Sub(ArmEmitterContext context)
         {
-            IOpCode32Alu op = (IOpCode32Alu)context.CurrOp;
+            
 
             Operand n = GetAluN(context);
             Operand m = GetAluM(context, setCarry: false);

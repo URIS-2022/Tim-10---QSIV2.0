@@ -22,7 +22,7 @@ namespace ARMeilleure.CodeGen.X86
             {
                 (_, int ebx7, int ecx7, _) = X86Base.CpuId(0x00000007, 0x00000000);
                 FeatureInfo7Ebx = (FeatureFlags7Ebx)ebx7;
-                FeatureInfo7Ecx = (FeatureFlags)ecx7;
+                FeatureInfo7Ecx = (FeatureFls)ecx7;
             }
         }
 
@@ -56,7 +56,7 @@ namespace ARMeilleure.CodeGen.X86
         }
 
         [Flags]
-        public enum FeatureFlags
+        public enum FeatureFls
         {
             Gfni = 1 << 8,
         }
@@ -64,7 +64,7 @@ namespace ARMeilleure.CodeGen.X86
         public static FeatureFlags1Edx FeatureInfo1Edx { get; }
         public static FeatureFlags1Ecx FeatureInfo1Ecx { get; }
         public static FeatureFlags7Ebx FeatureInfo7Ebx { get; } = 0;
-        public static FeatureFlags FeatureInfo7Ecx { get; } = 0;
+        public static FeatureFls FeatureInfo7Ecx { get; } = 0;
 
         public static bool SupportsSse => FeatureInfo1Edx.HasFlag(FeatureFlags1Edx.Sse);
         public static bool SupportsSse2 => FeatureInfo1Edx.HasFlag(FeatureFlags1Edx.Sse2);
@@ -80,7 +80,7 @@ namespace ARMeilleure.CodeGen.X86
         public static bool SupportsAvx2 => FeatureInfo7Ebx.HasFlag(FeatureFlags7Ebx.Avx2) && SupportsAvx;
         public static bool SupportsF16c => FeatureInfo1Ecx.HasFlag(FeatureFlags1Ecx.F16c);
         public static bool SupportsSha => FeatureInfo7Ebx.HasFlag(FeatureFlags7Ebx.Sha);
-        public static bool SupportsGfni => FeatureInfo7Ecx.HasFlag(FeatureFlags.Gfni);
+        public static bool SupportsGfni => FeatureInfo7Ecx.HasFlag(FeatureFls.Gfni);
 
         public static bool ForceLegacySse { get; set; }
 
