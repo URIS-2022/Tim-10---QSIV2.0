@@ -71,7 +71,7 @@ namespace Ryujinx.Audio.Renderer.Dsp.Command
                 return (IntPtr)((float*)_buffersMemoryHandle.Pointer + index * _sampleCount);
             }
 
-            throw new ArgumentOutOfRangeException("exception");
+            throw new ArgumentOutOfRangeException("b", "exception");
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

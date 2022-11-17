@@ -134,7 +134,7 @@ namespace Ryujinx.Graphics.Nvdec.Vp9
         };
 
         // These are used for masking the left and above borders.
-        private const ulong LeftBorder = 0x1111111111111111UL;
+        
         private const ulong AboveBorder = 0x000000ff000000ffUL;
 
         // 16 bit masks for uv transform sizes.

@@ -71,11 +71,11 @@ namespace Ryujinx.HLE.HOS.Services.Ssl.SslService
             switch (version & SslVersion.VersionMask)
             {
                 case SslVersion.Auto:
-                    return SslProtocols.Tls12 | SslProtocols.Tls11 | SslProtocols.Tls12 | SslProtocols.Tls13;
+                    return SslProtocols.Tls12 | SslProtocols.Tls12 | SslProtocols.Tls12 | SslProtocols.Tls13;
                 case SslVersion.TlsV10:
-                    return SslProtocols.Tls;
+                    return SslProtocols.Tls12;
                 case SslVersion.TlsV11:
-                    return SslProtocols.Tls11;
+                    return SslProtocols.Tls12;
                 case SslVersion.TlsV12:
                     return SslProtocols.Tls12;
                 case SslVersion.TlsV13:

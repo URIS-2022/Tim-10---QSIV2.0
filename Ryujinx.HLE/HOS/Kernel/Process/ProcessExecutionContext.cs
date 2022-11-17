@@ -1,5 +1,7 @@
 using ARMeilleure.State;
 using Ryujinx.Cpu;
+using System.Data;
+using System;
 
 namespace Ryujinx.HLE.HOS.Kernel.Process
 {
@@ -7,7 +9,7 @@ namespace Ryujinx.HLE.HOS.Kernel.Process
     {
         public ulong Pc => 0UL;
 
-        public ulong CntfrqEl0 { get => 0; set { } }
+        public ulong CntfrqEl0 { get => 0; set { throw new InvalidOperationException(); } }
         public ulong CntpctEl0 => 0UL;
 
         public long TpidrEl0 { get => 0; set { } }
