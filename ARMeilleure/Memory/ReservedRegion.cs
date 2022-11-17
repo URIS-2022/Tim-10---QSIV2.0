@@ -31,7 +31,7 @@ namespace ARMeilleure.Memory
         {
             if (desiredSize > _maxSize)
             {
-                throw new OutOfMemoryException();
+                throw new OutOfMemoryException("exception");
             }
 
             if (desiredSize > _currentSize)
