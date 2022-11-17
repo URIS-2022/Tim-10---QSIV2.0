@@ -311,7 +311,7 @@ namespace Ryujinx.Graphics.Texture
 
                     r2 = r0 + SignExtend((int)(high >> 1), 4);
                     g2 = g0 + SignExtend((int)(((high >> 7) & 0x10) | ((low >> 41) & 0x0F)), 5);
-                    b2 = b0 + SignExtend((int)(((high << 3) & 0x08) | ((low >> 61))), 4);
+                    b2 = b0 + SignExtend((int)(((high << 3) & 0x08) | (low >> 61)), 4);
 
                     r3 = r0 + SignExtend((int)(high >> 7), 4);
                     g3 = g0 + SignExtend((int)(((low >> 36) & 0x10) | ((low >> 51) & 0x0F)), 5);
