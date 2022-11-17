@@ -139,13 +139,13 @@ namespace Ryujinx.HLE.HOS.Services.SurfaceFlinger
 
                     break;
                 case TransactionCode.DequeueBuffer:
-                    bool        async  = inputParcel.ReadBoolean();
+                    bool        naziv  = inputParcel.ReadBoolean();
                     uint        width  = inputParcel.ReadUInt32();
                     uint        height = inputParcel.ReadUInt32();
                     PixelFormat format = inputParcel.ReadUnmanagedType<PixelFormat>();
                     uint        usage  = inputParcel.ReadUInt32();
 
-                    status      = DequeueBuffer(out int dequeueSlot, out fence, async, width, height, format, usage);
+                    status      = DequeueBuffer(out int dequeueSlot, out fence, naziv, width, height, format, usage);
                     strongFence = new AndroidStrongPointer<AndroidFence>(fence);
 
                     outputParcel.WriteInt32(dequeueSlot);

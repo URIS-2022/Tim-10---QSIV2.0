@@ -76,7 +76,6 @@ namespace ARMeilleure.CodeGen.RegisterAllocators
         // The "visited" state is stored in the MSB of the local's value.
         private const ulong VisitedMask = 1ul << 63;
 
-        private BlockInfo[] _blockInfo;
         private LocalInfo[] _localInfo;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -112,7 +111,7 @@ namespace ARMeilleure.CodeGen.RegisterAllocators
             int intFreeRegisters = regMasks.IntAvailableRegisters;
             int vecFreeRegisters = regMasks.VecAvailableRegisters;
 
-            _blockInfo = new BlockInfo[cfg.Blocks.Count];
+            BlockInfo[] _blockInfo = new BlockInfo[cfg.Blocks.Count];
             _localInfo = new LocalInfo[cfg.Blocks.Count * 3];
 
             int localInfoCount = 0;

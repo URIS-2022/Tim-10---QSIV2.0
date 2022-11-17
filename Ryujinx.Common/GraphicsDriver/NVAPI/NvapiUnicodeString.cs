@@ -33,10 +33,8 @@ namespace Ryujinx.Common.GraphicsDriver.NVAPI
         {
             text += '\0';
             fixed (char* textPtr = text)
-            fixed (byte* data = _data)
-            {
-                int written = Encoding.Unicode.GetBytes(textPtr, text.Length, data, 4096);
-            }
+            fixed (byte* data = _data) { }
+            
         }
     }
 }
