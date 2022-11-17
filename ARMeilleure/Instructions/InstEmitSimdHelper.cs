@@ -242,7 +242,7 @@ namespace ARMeilleure.Instructions
         {
             switch (roundMode)
             {
-                case FPRoundingMode.ToNearest:            return 8 | 0; // even
+                case FPRoundingMode.ToNearest:            return 8; // even
                 case FPRoundingMode.TowardsPlusInfinity:  return 8 | 2;
                 case FPRoundingMode.TowardsMinusInfinity: return 8 | 1;
                 case FPRoundingMode.TowardsZero:          return 8 | 3;
