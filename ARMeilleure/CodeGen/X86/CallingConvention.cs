@@ -97,7 +97,7 @@ namespace ARMeilleure.CodeGen.X86
                     case 3: return X86Register.R9;
                 }
             }
-            else /* if (GetCurrentCallConv() == CallConvName.SystemV) */
+            else
             {
                 switch (index)
                 {

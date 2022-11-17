@@ -1227,19 +1227,17 @@ namespace ARMeilleure.Instructions
 
             Debug.Assert((op.Size & 1) == 0 && op.RegisterSize == RegisterSize.Simd128);
 
-            const int sm0 = 0 << 6 | 0 << 4 | 0 << 2 | 0 << 0;
             const int sm1 = 1 << 6 | 1 << 4 | 1 << 2 | 1 << 0;
             const int sm2 = 2 << 6 | 2 << 4 | 2 << 2 | 2 << 0;
             const int sm3 = 3 << 6 | 3 << 4 | 3 << 2 | 3 << 0;
 
             Operand nCopy = context.Copy(GetVec(op.Rn));
 
-            Operand part0 = context.AddIntrinsic(Intrinsic.X86Shufps, nCopy, nCopy, Const(sm0));
             Operand part1 = context.AddIntrinsic(Intrinsic.X86Shufps, nCopy, nCopy, Const(sm1));
             Operand part2 = context.AddIntrinsic(Intrinsic.X86Shufps, nCopy, nCopy, Const(sm2));
             Operand part3 = context.AddIntrinsic(Intrinsic.X86Shufps, nCopy, nCopy, Const(sm3));
 
-            Operand res = emit(emit(part0, part1), emit(part2, part3));
+            Operand res = emit(( part1), emit(part2, part3));
 
             context.Copy(GetVec(op.Rd), context.VectorZeroUpper96(res));
         }
