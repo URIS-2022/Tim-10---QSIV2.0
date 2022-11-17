@@ -28,7 +28,7 @@ namespace ARMeilleure.CodeGen.X86
                        (1 << (int)X86Register.R10) |
                        (1 << (int)X86Register.R11);
             }
-            else /* if (GetCurrentCallConv() == CallConvName.SystemV) */
+            else 
             {
                 return (1 << (int)X86Register.Rax) |
                        (1 << (int)X86Register.Rcx) |
