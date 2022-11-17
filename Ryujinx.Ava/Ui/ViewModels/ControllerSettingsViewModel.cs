@@ -326,7 +326,7 @@ namespace Ryujinx.Ava.Ui.ViewModels
 
         public async void ShowMotionConfig()
         {
-            await MotionSettingsWindow.Show(this);
+             await MotionSettingsWindow.Show(this);
         }
 
         public async void ShowRumbleConfig()

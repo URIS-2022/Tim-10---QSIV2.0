@@ -19,9 +19,9 @@ namespace SoundIOSharp
         }
         // Equality (based on handle)
 
-        public override bool Equals (object other)
+        public override bool Equals (object obj)
         {
-            var d = other as SoundIOOutStream;
+            var d = obj as SoundIOOutStream;
 
             return d != null && (this.handle == d.handle);
         }

@@ -9,8 +9,6 @@ namespace ARMeilleure.IntermediateRepresentation
         private struct Data
         {
 #pragma warning disable CS0649
-            public byte Kind;
-            public byte Type;
 #pragma warning restore CS0649
             public byte Scale;
             public Operand BaseAddress;
