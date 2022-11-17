@@ -251,9 +251,9 @@ namespace Ryujinx.Graphics.GAL.Multithreading
             _renderer.QueueCommand();
         }
 
-        public void SetScissors(ReadOnlySpan<Rectangle<int>> scissors)
+        public void SetScissors(ReadOnlySpan<Rectangle<int>> regions)
         {
-            _renderer.New<SetScissorsCommand>().Set(_renderer.CopySpan(scissors));
+            _renderer.New<SetScissorsCommand>().Set(_renderer.CopySpan(regions));
             _renderer.QueueCommand();
         }
 

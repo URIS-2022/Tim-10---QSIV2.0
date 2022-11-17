@@ -2,6 +2,7 @@ using ARMeilleure.Instructions;
 using System;
 using System.Collections.Generic;
 using System.Numerics;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace ARMeilleure.Decoders
 {
@@ -1369,7 +1370,7 @@ namespace ARMeilleure.Decoders
             }
             else if (thumbEncoding.StartsWith("1111001x"))
             {
-                thumbEncoding = "111x1111" + encoding.Substring(8);
+                thumbEncoding = string.Concat("111x1111", encoding.AsSpan(8));
             }
             else if (thumbEncoding.StartsWith("11110010"))
             {

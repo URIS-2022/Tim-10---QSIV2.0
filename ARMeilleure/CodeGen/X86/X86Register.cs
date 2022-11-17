@@ -35,7 +35,6 @@ namespace ARMeilleure.CodeGen.X86
         Xmm11 = 11,
         Xmm12 = 12,
         Xmm13 = 13,
-        Xmm14 = 14,
         Xmm15 = 15
     }
 }
