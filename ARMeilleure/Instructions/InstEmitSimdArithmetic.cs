@@ -3521,7 +3521,7 @@ namespace ARMeilleure.Instructions
                 ? context.ICompareLessOrEqual  (op1, op2)
                 : context.ICompareLessOrEqualUI(op1, op2);
 
-            return context.ConditionalSelect(cmp, op1, op2);
+            return context.ConditionalSelect(op1, op2, cmp);
         }
 
         private static void EmitSse41ScalarRoundOpF(ArmEmitterContext context, FPRoundingMode roundMode)

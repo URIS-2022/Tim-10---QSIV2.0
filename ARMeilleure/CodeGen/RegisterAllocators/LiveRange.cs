@@ -63,6 +63,11 @@ namespace ARMeilleure.CodeGen.RegisterAllocators
             return !a.Equals(b);
         }
 
+        public static implicit operator LiveRange(int v)
+        {
+            throw new NotImplementedException();
+        }
+
         public override int GetHashCode()
         {
             return HashCode.Combine((IntPtr)_data);
