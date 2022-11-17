@@ -149,7 +149,7 @@ namespace ARMeilleure.Instructions
                         case Aarch32Mode.Abort:      return RegisterAlias.LrAbt;
                         case Aarch32Mode.Undefined:  return RegisterAlias.LrUnd;
 
-                        default: throw new ArgumentException(nameof(mode));
+                        default: throw new ArgumentException(nameof(Aarch32Mode));
                     }
 
                 default: throw new ArgumentOutOfRangeException(nameof(regIndex));

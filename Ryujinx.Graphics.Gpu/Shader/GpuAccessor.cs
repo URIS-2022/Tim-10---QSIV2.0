@@ -177,11 +177,12 @@ namespace Ryujinx.Graphics.Gpu.Shader
         }
 
         //// <inheritdoc/>
-        public TextureFormat QueryTextureFormat(int handle, int cbufSlot)
+        public TextureFormat QueryTextureFormat(int handle , int cbufSlot )
         {
             _state.SpecializationState?.RecordTextureFormat(_stageIndex, handle, cbufSlot);
             var descriptor = GetTextureDescriptor(handle, cbufSlot);
             return ConvertToTextureFormat(descriptor.UnpackFormat(), descriptor.UnpackSrgb());
+            
         }
 
         /// <inheritdoc/>

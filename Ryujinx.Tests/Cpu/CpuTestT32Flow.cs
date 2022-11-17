@@ -1,12 +1,13 @@
 ﻿using ARMeilleure.State;
 using NUnit.Framework;
+using System;
 
 namespace Ryujinx.Tests.Cpu
 {
     [Category("T32Flow")]
     public sealed class CpuTestT32Flow : CpuTest32
     {
-        [Test]
+        [TestMethod]
         public void TestT32B1()
         {
             // BNE label
@@ -162,6 +163,10 @@ namespace Ryujinx.Tests.Cpu
 
             Assert.That(GetContext().GetX(0), Is.EqualTo(0x1007));
             Assert.That(GetContext().GetPstateFlag(PState.TFlag), Is.EqualTo(false));
+        }
+
+        private class TestMethodAttribute : Attribute
+        {
         }
     }
 }

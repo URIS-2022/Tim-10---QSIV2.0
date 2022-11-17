@@ -50,7 +50,7 @@ namespace Ryujinx.Memory.WindowsShared
         /// Trims inactive threads from the partial unmap state's thread mapping every few seconds.
         /// Should be run in a Background thread so that it doesn't stop the program from closing.
         /// </summary>
-        private void TrimThreadLocalMapLoop()
+        void TrimThreadLocalMapLoop()
         {
             while (true)
             {
