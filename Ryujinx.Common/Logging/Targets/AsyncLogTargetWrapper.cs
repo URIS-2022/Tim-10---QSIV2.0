@@ -22,7 +22,7 @@ namespace Ryujinx.Common.Logging
     {
         private ILogTarget _target;
 
-        private Thread _messageThread;
+        private readonly Thread _messageThread;
 
         private BlockingCollection<LogEventArgs> _messageQueue;
 
