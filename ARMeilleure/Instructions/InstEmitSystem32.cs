@@ -217,7 +217,10 @@ namespace ARMeilleure.Instructions
             }
         }
 
-        public static void Nop(ArmEmitterContext context) { }
+        public static void Nop(ArmEmitterContext context) 
+        {
+            throw new NotSupportedException("Error");
+        }
 
         public static void Vmrs(ArmEmitterContext context)
         {

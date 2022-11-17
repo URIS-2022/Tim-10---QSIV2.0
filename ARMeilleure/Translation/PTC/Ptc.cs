@@ -185,12 +185,9 @@ namespace ARMeilleure.Translation.PTC
 
             if (fileInfoActual.Exists && fileInfoActual.Length != 0L)
             {
-                if (!Load(fileNameActual, false))
+                if (!Load(fileNameActual, false) && fileInfoBackup.Exists && fileInfoBackup.Length != 0L)
                 {
-                    if (fileInfoBackup.Exists && fileInfoBackup.Length != 0L)
-                    {
                         Load(fileNameBackup, true);
-                    }
                 }
             }
             else if (fileInfoBackup.Exists && fileInfoBackup.Length != 0L)
