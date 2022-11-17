@@ -434,7 +434,7 @@ namespace Ryujinx.Ava.Ui.ViewModels
 
             if (str.Length > MaxSize)
             {
-                return str.Substring(0, MaxSize - Ellipsis.Length) + Ellipsis;
+                return string.Concat(str.AsSpan(0, MaxSize - Ellipsis.Length), Ellipsis);
             }
 
             return str;
