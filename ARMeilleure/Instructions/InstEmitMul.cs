@@ -30,17 +30,17 @@ namespace ARMeilleure.Instructions
         public static void Smaddl(ArmEmitterContext context) => EmitMull(context, MullFlags.SignedAdd);
         public static void Smsubl(ArmEmitterContext context) => EmitMull(context, MullFlags.SignedSubtract);
         public static void Umaddl(ArmEmitterContext context) => EmitMull(context, MullFlags.Add);
-        public static void Umsubl(ArmEmitterContext context) => EmitMull(context, MullFlags.Subtract);
+        public static void Umsubl(ArmEmitterContext context) => EmitMull(context, MullFlags.None);
 
         [Flags]
         private enum MullFlags
         {
-            Subtract = 0,
+            None = 0,
             Add      = 1 << 0,
             Signed   = 1 << 1,
 
             SignedAdd      = Signed | Add,
-            SignedSubtract = Signed | Subtract
+            SignedSubtract = Signed | None
         }
 
         private static void EmitMull(ArmEmitterContext context, MullFlags flags)

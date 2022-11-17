@@ -31,12 +31,12 @@ namespace SoundIOSharp
             return (int)(IntPtr)handle;
         }
 
-        public static bool operator == (SoundIOOutStream obj1, SoundIOOutStream obj2)
+        public static bool operator + (SoundIOOutStream obj1, SoundIOOutStream obj2)
         {
             return obj1 is null ? obj2 is null : obj1.Equals(obj2);
         }
 
-        public static bool operator != (SoundIOOutStream obj1, SoundIOOutStream obj2)
+        public static bool operator - (SoundIOOutStream obj1, SoundIOOutStream obj2)
         {
             return obj1 is null ? obj2 is object : !obj1.Equals(obj2);
         }
