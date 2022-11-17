@@ -27,13 +27,13 @@ namespace ARMeilleure.Instructions
             SetIntOrZR(context, op.Rd, res);
         }
 
-        public static void Smaddl(ArmEmitterContext context) => EmitMull(context, MullFlags.SignedAdd);
-        public static void Smsubl(ArmEmitterContext context) => EmitMull(context, MullFlags.SignedSubtract);
-        public static void Umaddl(ArmEmitterContext context) => EmitMull(context, MullFlags.Add);
-        public static void Umsubl(ArmEmitterContext context) => EmitMull(context, MullFlags.None);
+        public static void Smaddl(ArmEmitterContext context) => EmitMull(context, MullFls.SignedAdd);
+        public static void Smsubl(ArmEmitterContext context) => EmitMull(context, MullFls.SignedSubtract);
+        public static void Umaddl(ArmEmitterContext context) => EmitMull(context, MullFls.Add);
+        public static void Umsubl(ArmEmitterContext context) => EmitMull(context, MullFls.None);
 
         [Flags]
-        private enum MullFlags
+        private enum MullFls
         {
             None = 0,
             Add      = 1 << 0,
@@ -43,7 +43,7 @@ namespace ARMeilleure.Instructions
             SignedSubtract = Signed | None
         }
 
-        private static void EmitMull(ArmEmitterContext context, MullFlags flags)
+        private static void EmitMull(ArmEmitterContext context, MullFls flags)
         {
             OpCodeMul op = (OpCodeMul)context.CurrOp;
 
@@ -51,7 +51,7 @@ namespace ARMeilleure.Instructions
             {
                 Operand value = GetIntOrZR(context, index);
 
-                if ((flags & MullFlags.Signed) != 0)
+                if ((flags & MullFls.Signed) != 0)
                 {
                     return context.SignExtend32(value.Type, value);
                 }
@@ -68,7 +68,7 @@ namespace ARMeilleure.Instructions
 
             Operand res = context.Multiply(n, m);
 
-            res = (flags & MullFlags.Add) != 0 ? context.Add(a, res) : context.Subtract(a, res);
+            res = (flags & MullFls.Add) != 0 ? context.Add(a, res) : context.Subtract(a, res);
 
             SetIntOrZR(context, op.Rd, res);
         }
