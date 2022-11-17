@@ -14,7 +14,7 @@ using System;
 
 namespace Ryujinx.Ava.Ui.Windows
 {
-    public partial class ControllerSettingsWindow : UserControl
+    public partial class ControllerSettingsWindow : UserControl , IDisposable
     {
         private bool _dialogOpen;
 

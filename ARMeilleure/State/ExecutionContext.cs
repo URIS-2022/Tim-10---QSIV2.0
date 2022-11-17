@@ -7,7 +7,7 @@ namespace ARMeilleure.State
     {
         private const int MinCountForCheck = 4000;
 
-        private readonly NativeContext _nativeContext;
+        private  readonly NativeContext _nativeContext;
 
         internal IntPtr NativeContextPtr => _nativeContext.BasePtr;
 
@@ -16,7 +16,6 @@ namespace ARMeilleure.State
         private readonly ICounter _counter;
 
         public ulong Pc => _nativeContext.GetPc();
-
         public uint CtrEl0 => 0x8444c004;
         public uint DczidEl0 => 0x00000004;
 
