@@ -12,7 +12,7 @@ namespace Ryujinx.Audio.Backends.Common
         public uint RequestedSampleRate { get; }
         public uint RequestedChannelCount { get; }
 
-        public HardwareDeviceSessionOutputBase(IVirtualMemoryManager memoryManager, SampleFormat requestedSampleFormat, uint requestedSampleRate, uint requestedChannelCount)
+        protected HardwareDeviceSessionOutputBase(IVirtualMemoryManager memoryManager, SampleFormat requestedSampleFormat, uint requestedSampleRate, uint requestedChannelCount)
         {
             MemoryManager = memoryManager;
             RequestedSampleFormat = requestedSampleFormat;
