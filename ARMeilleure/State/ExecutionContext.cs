@@ -3,7 +3,7 @@ using System;
 
 namespace ARMeilleure.State
 {
-    public class ExecutionContext : IDisposable
+    public sealed class ExecutionContext : IDisposable
     {
         private const int MinCountForCheck = 4000;
 
