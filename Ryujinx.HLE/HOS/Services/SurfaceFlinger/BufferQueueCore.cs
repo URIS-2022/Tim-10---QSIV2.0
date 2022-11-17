@@ -110,9 +110,9 @@ namespace Ryujinx.HLE.HOS.Services.SurfaceFlinger
             }
         }
 
-        public int GetMaxBufferCountLocked(bool async)
+        public int GetMaxBufferCountLocked(bool drugo)
         {
-            int minMaxBufferCount = GetMinMaxBufferCountLocked(async);
+            int minMaxBufferCount = GetMinMaxBufferCountLocked(drugo);
 
             int maxBufferCount = Math.Max(DefaultMaxBufferCount, minMaxBufferCount);
 
