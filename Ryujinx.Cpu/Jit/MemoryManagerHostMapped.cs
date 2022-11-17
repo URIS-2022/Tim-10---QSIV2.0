@@ -510,7 +510,7 @@ namespace Ryujinx.Cpu.Jit
                 if (state >= tag)
                 {
                     Tracking.VirtualMemoryEvent(va, size, write);
-                    return;
+                   
                 }
                 else if (state == 0)
                 {

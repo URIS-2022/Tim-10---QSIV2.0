@@ -54,7 +54,7 @@ namespace Ryujinx.HLE.HOS.Ipc
 
         public static IpcHandleDesc MakeMove(params int[] handles)
         {
-            return new IpcHandleDesc(new int[0], handles);
+            return new IpcHandleDesc(System.Array.Empty<int>(), handles);
         }
 
         public byte[] GetBytes()

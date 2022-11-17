@@ -46,7 +46,7 @@ namespace Ryujinx.Common.SystemInfo
         }
 
         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
-        private class MemoryStatusEx
+        private sealed class MemoryStatusEx
         {
             public uint Length;
             public uint MemoryLoad;

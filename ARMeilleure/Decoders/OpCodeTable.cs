@@ -2,6 +2,7 @@ using ARMeilleure.Instructions;
 using System;
 using System.Collections.Generic;
 using System.Numerics;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace ARMeilleure.Decoders
 {
@@ -1339,7 +1340,7 @@ namespace ARMeilleure.Decoders
 
         private static void SetT32(string encoding, InstName name, InstEmitter emitter, MakeOp makeOp)
         {
-            string reversedEncoding = encoding.Substring(16) + encoding.Substring(0, 16);
+            string reversedEncoding = string.Concat(encoding.AsSpan(16) , encoding.AsSpan(0, 16));
             MakeOp reversedMakeOp =
                 (InstDescriptor inst, ulong address, int opCode)
                     => makeOp(inst, address, (int)BitOperations.RotateRight((uint)opCode, 16));
@@ -1369,11 +1370,12 @@ namespace ARMeilleure.Decoders
             }
             else if (thumbEncoding.StartsWith("1111001x"))
             {
-                thumbEncoding = "111x1111" + encoding.Substring(8);
+                thumbEncoding = string.Concat("111x1111", encoding.AsSpan(8));
             }
             else if (thumbEncoding.StartsWith("11110010"))
             {
-                thumbEncoding = "11101111" + encoding.Substring(8);
+                //thumbEncoding = "11101111" + encoding.Substring(8);
+                thumbEncoding = string.Concat("11101111", encoding.AsSpan(8));
             }
             else if (thumbEncoding.StartsWith("11110011"))
             {

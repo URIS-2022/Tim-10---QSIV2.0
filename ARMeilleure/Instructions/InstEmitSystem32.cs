@@ -111,8 +111,6 @@ namespace ARMeilleure.Instructions
             {
                 // Special behavior: copy NZCV flags into APSR.
                 EmitSetNzcv(context, context.Call(info));
-
-                return;
             }
             else
             {
@@ -219,7 +217,10 @@ namespace ARMeilleure.Instructions
             }
         }
 
-        public static void Nop(ArmEmitterContext context) { }
+        public static void Nop(ArmEmitterContext context) 
+        {
+            throw new NotSupportedException("Error");
+        }
 
         public static void Vmrs(ArmEmitterContext context)
         {

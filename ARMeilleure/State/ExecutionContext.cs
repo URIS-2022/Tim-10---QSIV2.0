@@ -3,11 +3,11 @@ using System;
 
 namespace ARMeilleure.State
 {
-    public class ExecutionContext
+    public sealed class ExecutionContext : IDisposable
     {
         private const int MinCountForCheck = 4000;
 
-        private NativeContext _nativeContext;
+        private readonly NativeContext _nativeContext;
 
         internal IntPtr NativeContextPtr => _nativeContext.BasePtr;
 

@@ -152,7 +152,7 @@ namespace ARMeilleure.Instructions
             {
                 EmitBxWritePc(context, value);
             }
-            else if (rd == RegisterAlias.Aarch32Pc && setFlags == false)
+            else if (rd == RegisterAlias.Aarch32Pc && !setFlags)
             {
                 EmitAluWritePc(context, value);
             }

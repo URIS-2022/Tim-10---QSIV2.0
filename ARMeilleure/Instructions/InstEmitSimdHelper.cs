@@ -22,7 +22,7 @@ namespace ARMeilleure.Instructions
         {
             14L << 56 | 12L << 48 | 10L << 40 | 08L << 32 | 06L << 24 | 04L << 16 | 02L << 8, // B
             13L << 56 | 12L << 48 | 09L << 40 | 08L << 32 | 05L << 24 | 04L << 16 | 01L << 8, // H
-            11L << 56 | 10L << 48 | 09L << 40 | 08L << 32 | 03L << 24 | 02L << 16 | 01L << 8 | 00L << 0  // S
+            11L << 56 | 10L << 48 | 09L << 40 | 08L << 32 | 03L << 24 | 02L << 16 | 01L << 8  // S
         };
 
         public static readonly long[] OddMasks = new long[]
@@ -242,7 +242,7 @@ namespace ARMeilleure.Instructions
         {
             switch (roundMode)
             {
-                case FPRoundingMode.ToNearest:            return 8 | 0; // even
+                case FPRoundingMode.ToNearest:            return 8; // even
                 case FPRoundingMode.TowardsPlusInfinity:  return 8 | 2;
                 case FPRoundingMode.TowardsMinusInfinity: return 8 | 1;
                 case FPRoundingMode.TowardsZero:          return 8 | 3;
@@ -1227,19 +1227,17 @@ namespace ARMeilleure.Instructions
 
             Debug.Assert((op.Size & 1) == 0 && op.RegisterSize == RegisterSize.Simd128);
 
-            const int sm0 = 0 << 6 | 0 << 4 | 0 << 2 | 0 << 0;
             const int sm1 = 1 << 6 | 1 << 4 | 1 << 2 | 1 << 0;
             const int sm2 = 2 << 6 | 2 << 4 | 2 << 2 | 2 << 0;
             const int sm3 = 3 << 6 | 3 << 4 | 3 << 2 | 3 << 0;
 
             Operand nCopy = context.Copy(GetVec(op.Rn));
 
-            Operand part0 = context.AddIntrinsic(Intrinsic.X86Shufps, nCopy, nCopy, Const(sm0));
             Operand part1 = context.AddIntrinsic(Intrinsic.X86Shufps, nCopy, nCopy, Const(sm1));
             Operand part2 = context.AddIntrinsic(Intrinsic.X86Shufps, nCopy, nCopy, Const(sm2));
             Operand part3 = context.AddIntrinsic(Intrinsic.X86Shufps, nCopy, nCopy, Const(sm3));
 
-            Operand res = emit(emit(part0, part1), emit(part2, part3));
+            Operand res = emit(( part1), emit(part2, part3));
 
             context.Copy(GetVec(op.Rd), context.VectorZeroUpper96(res));
         }

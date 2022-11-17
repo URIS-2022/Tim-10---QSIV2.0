@@ -19,9 +19,9 @@ namespace SoundIOSharp
         }
         // Equality (based on handle)
 
-        public override bool Equals (object other)
+        public override bool Equals (object obj)
         {
-            var d = other as SoundIOOutStream;
+            var d = obj as SoundIOOutStream;
 
             return d != null && (this.handle == d.handle);
         }
@@ -31,12 +31,12 @@ namespace SoundIOSharp
             return (int)(IntPtr)handle;
         }
 
-        public static bool operator == (SoundIOOutStream obj1, SoundIOOutStream obj2)
+        public static bool operator + (SoundIOOutStream obj1, SoundIOOutStream obj2)
         {
             return obj1 is null ? obj2 is null : obj1.Equals(obj2);
         }
 
-        public static bool operator != (SoundIOOutStream obj1, SoundIOOutStream obj2)
+        public static bool operator - (SoundIOOutStream obj1, SoundIOOutStream obj2)
         {
             return obj1 is null ? obj2 is object : !obj1.Equals(obj2);
         }

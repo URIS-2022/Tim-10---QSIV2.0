@@ -35,8 +35,9 @@ namespace Ryujinx.Common.GraphicsDriver.NVAPI
             fixed (char* textPtr = text)
             fixed (byte* data = _data)
             {
-                int written = Encoding.Unicode.GetBytes(textPtr, text.Length, data, 4096);
+                //komentar
             }
+            
         }
     }
 }

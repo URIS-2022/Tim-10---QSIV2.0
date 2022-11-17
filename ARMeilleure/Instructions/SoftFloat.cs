@@ -229,7 +229,7 @@ namespace ARMeilleure.Instructions
             switch (context.Fpcr.GetRoundingMode())
             {
                 default:
-                case FPRoundingMode.ToNearest:
+                
                     roundUp       = (error > 0.5d || (error == 0.5d && (intMant & 1u) == 1u));
                     overflowToInf = true;
                     break;
@@ -1430,7 +1430,6 @@ namespace ARMeilleure.Instructions
                 switch (fpcr.GetRoundingMode())
                 {
                     default:
-                    case FPRoundingMode.ToNearest:            overflowToInf = true;  break;
                     case FPRoundingMode.TowardsPlusInfinity:  overflowToInf = !sign; break;
                     case FPRoundingMode.TowardsMinusInfinity: overflowToInf = sign;  break;
                     case FPRoundingMode.TowardsZero:          overflowToInf = false; break;
@@ -3413,16 +3412,7 @@ namespace ARMeilleure.Instructions
             return FPZero(false);
         }
 
-        private static double FPProcessNaNs3(
-            FPType type1,
-            FPType type2,
-            FPType type3,
-            ulong op1,
-            ulong op2,
-            ulong op3,
-            out bool done,
-            ExecutionContext context,
-            FPCR fpcr)
+        private static double FPProcessNaNs3(FPType type1,FPType type2,FPType type3,ulong op1,ulong op2,ulong op3,out bool done,ExecutionContext context, FPCR fpcr)
         {
             done = true;
 
